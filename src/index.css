@@ -1,1 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@400;900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-primary: "Elsie Swash Caps", cursive;
+}
