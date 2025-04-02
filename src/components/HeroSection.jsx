@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Instagram } from "lucide-react";
+import { ArrowRight, Calendar, Mail } from "lucide-react";
 
 const HeroSection = () => {
   const fadeIn = {
@@ -9,11 +9,11 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative px-6 py-20 md:py-32 overflow-hidden bg-gradient-to-r from-amber-50 to-white">
+    <section className="relative px-6 py-20 md:py-32 overflow-hidden bg-gradient-to-r from-blue-50 to-white">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
-        <div className="absolute top-20 left-1/4 w-48 h-48 rounded-full bg-amber-200 mix-blend-multiply filter blur-xl"></div>
-        <div className="absolute bottom-10 right-1/4 w-64 h-64 rounded-full bg-amber-100 mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute top-20 left-1/4 w-48 h-48 rounded-full bg-blue-200 mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute bottom-10 right-1/4 w-64 h-64 rounded-full bg-blue-100 mix-blend-multiply filter blur-xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -30,32 +30,32 @@ const HeroSection = () => {
             className="lg:w-1/2"
           >
             <motion.div variants={fadeIn} className="mb-4">
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-amber-100 text-amber-800 text-sm font-medium">
-                <Instagram className="w-4 h-4 mr-2" />
-                Instagram Growth Specialist
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium">
+                <Calendar className="w-4 h-4 mr-2" />
+                Certified Virtual Assistant
               </span>
             </motion.div>
 
             <motion.h1 variants={fadeIn} className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 mb-4 leading-tight">
-              Transform Your <span className="text-amber-600">Photography</span> Business Online
+              Streamline Your Business With <span className="text-blue-600">Expert Virtual Support</span>
             </motion.h1>
 
             <motion.h2 variants={fadeIn} className="text-2xl md:text-3xl font-serif text-gray-700 mb-8">
-              Social Media Strategy & Instagram Coaching
+              Administrative Excellence & Operational Efficiency
             </motion.h2>
 
             <motion.p variants={fadeIn} className="text-lg text-gray-600 leading-relaxed mb-6">
-              When I was busy planning my wedding, I discovered the incredible artistry behind professional photography. 
-              Now I help photographers showcase their work through strategic social media that actually converts.
+              After years in corporate operations management, I discovered the transformative power of virtual assistance. 
+              Now I help entrepreneurs and executives reclaim their time through strategic business support.
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 mt-10">
-              <button className="flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">
-                Book a Free Consultation
+              <button className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">
+                Schedule Discovery Call
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <button className="flex items-center justify-center gap-2 border-2 border-gray-300 hover:border-amber-500 text-gray-700 hover:text-amber-700 px-8 py-4 rounded-lg font-medium transition-colors">
-                View Case Studies
+              <button className="flex items-center justify-center gap-2 border-2 border-gray-300 hover:border-blue-500 text-gray-700 hover:text-blue-700 px-8 py-4 rounded-lg font-medium transition-colors">
+                View Service Packages
               </button>
             </motion.div>
           </motion.div>
@@ -69,8 +69,8 @@ const HeroSection = () => {
           >
             <div className="relative">
               <img
-                src="/hero-image.jpg"
-                alt="Social Media Manager Coaching Photographers"
+                src="/virtual-assistant-hero.jpg"
+                alt="Professional Virtual Assistant at Work"
                 className="rounded-2xl shadow-2xl w-full max-w-lg mx-auto border-8 border-white transform rotate-1 hover:rotate-0 transition-transform duration-300"
               />
               <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg border border-gray-100">
@@ -81,8 +81,8 @@ const HeroSection = () => {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900">+200%</p>
-                    <p className="text-sm text-gray-600">Avg. Engagement</p>
+                    <p className="font-bold text-gray-900">10K+</p>
+                    <p className="text-sm text-gray-600">Tasks Completed</p>
                   </div>
                 </div>
               </div>
@@ -94,8 +94,8 @@ const HeroSection = () => {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900">50+</p>
-                    <p className="text-sm text-gray-600">Photographers Helped</p>
+                    <p className="font-bold text-gray-900">75+</p>
+                    <p className="text-sm text-gray-600">Clients Supported</p>
                   </div>
                 </div>
               </div>
