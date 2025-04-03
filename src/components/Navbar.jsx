@@ -139,7 +139,7 @@ const Navbar = () => {
               >
                 <motion.a 
                   href="#" 
-                  className="p-3 rounded-full bg-amber-100 text-amber-700"
+                  className="p-3 rounded-full bg-pink-100 text-pink-700"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -147,7 +147,7 @@ const Navbar = () => {
                 </motion.a>
                 <motion.a 
                   href="#" 
-                  className="p-3 rounded-full bg-amber-100 text-amber-700"
+                  className="p-3 rounded-full bg-pink-100 text-pink-700"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
