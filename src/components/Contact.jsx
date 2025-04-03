@@ -15,8 +15,8 @@ const Contact = () => {
     <section id="contact" className="relative px-6 py-28 overflow-hidden bg-gray-50">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5">
-        <div className="absolute top-1/4 left-10 w-64 h-64 rounded-full bg-amber-300 mix-blend-multiply filter blur-xl"></div>
-        <div className="absolute bottom-1/3 right-10 w-72 h-72 rounded-full bg-amber-200 mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute top-1/4 left-10 w-64 h-64 rounded-full bg-pink-300 mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute bottom-1/3 right-10 w-72 h-72 rounded-full bg-pink-200 mix-blend-multiply filter blur-xl"></div>
       </div>
 
       <motion.div 
@@ -29,7 +29,7 @@ const Contact = () => {
         <div className="text-center mb-20">
           <motion.h2 
             variants={fadeIn}
-            className="text-4xl md:text-5xl font-serif font-bold mb-4 text-gray-900"
+            className="text-4xl md:text-5xl font-secondary font-bold mb-4 text-gray-900"
           >
             Let's Work Together
           </motion.h2>
@@ -41,7 +41,7 @@ const Contact = () => {
           </motion.p>
           <motion.div 
             variants={fadeIn}
-            className="w-20 h-1 bg-amber-600 mx-auto mt-6"
+            className="w-20 h-1 bg-pink-600 mx-auto mt-6"
           ></motion.div>
         </div>
 
@@ -59,7 +59,7 @@ const Contact = () => {
                 <input 
                   type="text" 
                   id="name" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition-all"
                   placeholder="Your name"
                 />
               </div>
@@ -68,7 +68,7 @@ const Contact = () => {
                 <input 
                   type="email" 
                   id="email" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition-all"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -76,7 +76,7 @@ const Contact = () => {
                 <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">Service Needed</label>
                 <select 
                   id="service" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition-all"
                 >
                   <option value="">Select a service</option>
                   <option value="social-media">Social Media Management</option>
@@ -90,13 +90,13 @@ const Contact = () => {
                 <textarea 
                   id="message" 
                   rows={4} 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition-all"
                   placeholder="Tell me about your project needs..."
                 ></textarea>
               </div>
               <button 
                 type="submit" 
-                className="w-full flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                className="w-full flex items-center justify-center gap-2 bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
               >
                 <Send className="w-5 h-5" />
                 Send Message
@@ -114,31 +114,31 @@ const Contact = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-amber-100 text-amber-600">
+                  <div className="p-3 rounded-full bg-pink-100 text-pink-600">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-700">Email</h4>
-                    <a href="mailto:hello@yourdomain.com" className="text-gray-600 hover:text-amber-600 transition-colors">
+                    <a href="mailto:hello@yourdomain.com" className="text-gray-600 hover:text-pink-600 transition-colors">
                       hello@yourdomain.com
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-amber-100 text-amber-600">
+                  <div className="p-3 rounded-full bg-pink-100 text-pink-600">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-700">Phone</h4>
-                    <a href="tel:+1234567890" className="text-gray-600 hover:text-amber-600 transition-colors">
+                    <a href="tel:+1234567890" className="text-gray-600 hover:text-pink-600 transition-colors">
                       +1 (234) 567-890
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-amber-100 text-amber-600">
+                  <div className="p-3 rounded-full bg-pink-100 text-pink-600">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
