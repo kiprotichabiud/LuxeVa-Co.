@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useInView } from "framer-motion";
-import { Star } from "lucide-react"; // Using Lucide for beautiful icons
+import { Star } from "lucide-react"; 
 
 const Testimonials = () => {
   const ref = useRef(null);
@@ -45,7 +45,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="relative px-6 py-28 overflow-hidden bg-gradient-to-br from-amber-50 to-white">
+    <section id="testimonials" className="relative px-6 py-28 overflow-hidden bg-gradient-to-br from-pink-50 to-white">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-amber-300 mix-blend-multiply filter blur-xl"></div>
@@ -54,13 +54,13 @@ const Testimonials = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-gray-900">
+          <h2 className="text-4xl md:text-5xl font-secondary font-bold mb-4 text-gray-900">
             Client Love
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Hear what my clients say about working together
           </p>
-          <div className="w-20 h-1 bg-amber-600 mx-auto mt-6"></div>
+          <div className="w-20 h-1 bg-pink-600 mx-auto mt-6"></div>
         </div>
 
         <div 
