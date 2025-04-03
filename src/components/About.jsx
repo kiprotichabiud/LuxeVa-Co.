@@ -15,7 +15,7 @@ const About = () => {
   ];
 
   return (
-    <section className="relative px-6 py-20 md:py-28 overflow-hidden bg-gradient-to-b from-white to-amber-50">
+    <section className="relative px-6 py-20 md:py-28 overflow-hidden bg-gradient-to-b from-white to-amber-50 font-secondary ">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         <div className="absolute top-1/4 right-10 w-48 h-48 rounded-full bg-amber-200 mix-blend-multiply filter blur-xl"></div>
@@ -52,7 +52,7 @@ const About = () => {
             className="space-y-6 text-lg leading-relaxed"
           >
             <motion.p variants={fadeIn}>
-              I'm a <span className="font-semibold text-amber-700">social media strategist</span> with a deep passion for helping visual artists 
+              I'm a <span className="font-secondary text-amber-700">social media strategist</span> with a deep passion for helping visual artists 
               showcase their work in ways that attract their ideal clients.
             </motion.p>
             <motion.p variants={fadeIn}>

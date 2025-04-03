@@ -57,7 +57,7 @@ const Navbar = () => {
           className="text-xl font-serif font-bold tracking-wide"
         >
           <a href="#" className="flex items-center gap-2">
-            <span className="text-amber-700 italic">Jepkoech Herma</span>
+            <span className="text-black font-primary">Jepkoech Herma</span>
           </a>
         </motion.div>
 
