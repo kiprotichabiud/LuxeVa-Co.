@@ -31,13 +31,13 @@ const HeroSection = () => {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 mb-6 leading-tight">
               <span className="text-transparent bg-clip-text bg-black font-primary">
-                Organized. Efficient.
-              </span > <br  className=" font-primary"/>
+                Organized, Efficient
+              </span > <br/>
               and Simplified<br /> 
               <span className=" font-primary">Business</span>
             </h1>
 
-            <p className="text-lg text-gray-700 leading-relaxed mb-8">
+            <p className="text-lg text-gray-800 leading-relaxed mb-8">
               I help ambitious women entrepreneurs reclaim their time through personalized virtual support. 
               Let me handle the details while you focus on growing your empire.
             </p>
@@ -46,7 +46,7 @@ const HeroSection = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center justify-center gap-2 bg-gradient-to-r from-pink-500 to-pink-300 text-white px-8 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl"
+                className="flex items-center justify-center gap-2 bg-gradient-to-r from-pink-700 to-pink-500 text-white px-8 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl"
               >
                 Book a Discovery Call
                 <ChevronRight className="w-5 h-5" />
