@@ -67,11 +67,11 @@ const Navbar = () => {
             <motion.a
               key={item.name}
               href={item.path}
-              className="relative uppercase text-sm font-medium text-gray-700 tracking-wide group"
+              className="relative uppercase font-secondary tracking-wide group"
               whileHover={{ scale: 1.05 }}
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-600 transition-all group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-pink-600 transition-all group-hover:w-full"></span>
             </motion.a>
           ))}
         </div>
@@ -80,7 +80,7 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-4">
           <motion.a 
             href="#" 
-            className="p-2 rounded-full hover:bg-amber-100 text-gray-700 hover:text-amber-700 transition-colors"
+            className="p-2 rounded-full hover:bg-amber-100 text-gray-700 hover:text-pink-700 transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
