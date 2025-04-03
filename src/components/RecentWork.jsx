@@ -41,7 +41,7 @@ const RecentWork = () => {
       description: "Developed comprehensive business documentation with interactive training modules",
       results: ["75% faster onboarding", "Improved knowledge retention", "Standardized processes"],
       icon: <BookOpen className="w-6 h-6" />,
-      accentColor: "bg-amber-500"
+      accentColor: "bg-pink-500"
     }
   ];
 
@@ -55,11 +55,11 @@ const RecentWork = () => {
   };
 
   return (
-    <section id="work" className="relative px-6 py-20 md:py-28 overflow-hidden bg-gradient-to-b from-white to-amber-50/30">
+    <section id="work" className="relative px-6 py-20 md:py-28 overflow-hidden bg-gradient-to-b from-white to-pink-50/30">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
-        <div className="absolute top-1/4 right-10 w-64 h-64 rounded-full bg-amber-200 mix-blend-multiply filter blur-xl"></div>
-        <div className="absolute bottom-1/4 left-10 w-48 h-48 rounded-full bg-amber-100 mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute top-1/4 right-10 w-64 h-64 rounded-full bg-pink-200 mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute bottom-1/4 left-10 w-48 h-48 rounded-full bg-pink-100 mix-blend-multiply filter blur-xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -74,13 +74,13 @@ const RecentWork = () => {
           }}
           className="text-center mb-16"
         >
-          <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4 text-gray-900">
+          <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl lg:text-5xl font-secondary font-bold mb-4 text-gray-900">
             Client Success Stories
           </motion.h2>
           <motion.p variants={fadeIn} className="text-lg text-gray-600 max-w-2xl mx-auto">
             Transforming visions into measurable business results
           </motion.p>
-          <motion.div variants={fadeIn} className="w-20 h-1 bg-amber-600 mx-auto mt-6"></motion.div>
+          <motion.div variants={fadeIn} className="w-20 h-1 bg-pink-600 mx-auto mt-6"></motion.div>
         </motion.div>
 
         <motion.div 
@@ -105,14 +105,14 @@ const RecentWork = () => {
               
               <div className="p-8">
                 <div className="flex items-start gap-5 mb-6">
-                  <div className={`p-3 rounded-lg ${project.accentColor.replace('500', '100')} text-amber-700`}>
+                  <div className={`p-3 rounded-lg ${project.accentColor.replace('500', '100')} text-pink-700`}>
                     {project.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-800 group-hover:text-amber-700 transition-colors">
+                    <h3 className="text-xl font-semibold text-gray-800 group-hover:text-pink-700 transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-amber-600 font-medium">{project.client}</p>
+                    <p className="text-pink-600 font-medium">{project.client}</p>
                   </div>
                 </div>
 
@@ -123,7 +123,7 @@ const RecentWork = () => {
                   <ul className="space-y-2">
                     {project.results.map((result, i) => (
                       <li key={i} className="flex items-start">
-                        <span className="mr-2 mt-1 text-amber-500">
+                        <span className="mr-2 mt-1 text-pink-500">
                           <ChevronRight className="w-4 h-4" />
                         </span>
                         <span className="text-gray-700">{result}</span>
@@ -143,7 +143,7 @@ const RecentWork = () => {
           transition={{ delay: 0.2 }}
           className="mt-16 text-center"
         >
-          <button className="inline-flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">
+          <button className="inline-flex items-center justify-center gap-2 bg-pink-600 hover:bg-pink-700 text-white px-8 py-4 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">
             View All Case Studies
             <ArrowRight className="w-5 h-5" />
           </button>

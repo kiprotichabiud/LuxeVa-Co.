@@ -60,11 +60,11 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="relative px-6 py-20 md:py-28 overflow-hidden bg-gradient-to-b from-white to-amber-50">
+    <section id="services" className="relative px-6 py-20 md:py-28 overflow-hidden bg-gradient-to-b from-white to-pink-50">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
-        <div className="absolute top-1/3 left-10 w-48 h-48 rounded-full bg-amber-200 mix-blend-multiply filter blur-xl"></div>
-        <div className="absolute bottom-1/4 right-10 w-64 h-64 rounded-full bg-amber-100 mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute top-1/3 left-10 w-48 h-48 rounded-full bg-pink-200 mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute bottom-1/4 right-10 w-64 h-64 rounded-full bg-pink-100 mix-blend-multiply filter blur-xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -79,13 +79,13 @@ const Services = () => {
           }}
           className="text-center mb-16"
         >
-          <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4 text-gray-900">
-            Premium Virtual Assistance
+          <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl lg:text-5xl font-secondary font-bold mb-4 text-gray-900">
+            Services I Offer
           </motion.h2>
           <motion.p variants={fadeIn} className="text-lg text-gray-600 max-w-2xl mx-auto">
             Tailored solutions designed to amplify your productivity and business growth
           </motion.p>
-          <motion.div variants={fadeIn} className="w-20 h-1 bg-amber-600 mx-auto mt-6"></motion.div>
+          <motion.div variants={fadeIn} className="w-20 h-1 bg-pink-600 mx-auto mt-6"></motion.div>
         </motion.div>
 
         <motion.div 
@@ -106,14 +106,14 @@ const Services = () => {
               whileHover={{ y: -8, scale: 1.02 }}
               className="group relative overflow-hidden bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
             >
-              <div className="absolute -right-10 -top-10 w-32 h-32 rounded-full bg-amber-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -right-10 -top-10 w-32 h-32 rounded-full bg-pink-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               <div className="p-8 relative">
-                <div className={`p-4 rounded-lg bg-amber-100 text-amber-600 w-fit mb-6`}>
+                <div className={`p-4 rounded-lg bg-pink-100 text-pink-600 w-fit mb-6`}>
                   {service.icon}
                 </div>
                 
-                <h3 className="text-xl font-semibold text-gray-800 mb-4 group-hover:text-amber-700 transition-colors">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4 group-hover:text-pink-700 transition-colors">
                   {service.title}
                 </h3>
                 
@@ -122,7 +122,7 @@ const Services = () => {
                 <div className="space-y-2">
                   {service.highlights.map((highlight, i) => (
                     <div key={i} className="flex items-start">
-                      <span className="mr-2 mt-1 text-amber-500">
+                      <span className="mr-2 mt-1 text-pink-500">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
@@ -143,7 +143,7 @@ const Services = () => {
           transition={{ delay: 0.2 }}
           className="mt-16 text-center"
         >
-          <button className="inline-flex items-center justify-center gap-3 bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">
+          <button className="inline-flex items-center justify-center gap-3 bg-pink-600 hover:bg-pink-700 text-white px-8 py-4 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">
             Get Customized Service Package
             <ArrowRight className="w-5 h-5" />
           </button>

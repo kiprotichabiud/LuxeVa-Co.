@@ -33,8 +33,8 @@ const About = () => {
           }}
           className="text-center mb-16"
         >
-          <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl font-serif font-bold mb-4">
-            About Me
+          <motion.h2 variants={fadeIn} className="text-3xl md:text-4xl font-secondary font-bold mb-4">
+            Who I Am
           </motion.h2>
           <motion.div variants={fadeIn} className="w-20 h-1 bg-pink-600 mx-auto"></motion.div>
         </motion.div>
