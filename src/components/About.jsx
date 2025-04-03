@@ -9,9 +9,9 @@ const About = () => {
   };
 
   const stats = [
-    { number: "5+", label: "Years Experience", icon: <Award className="w-8 h-8 text-pink-600" /> },
-    { number: "200+", label: "Clients Helped", icon: <Users className="w-8 h-8 text-pink-600" /> },
-    { number: "3M+", label: "Content Reached", icon: <BarChart2 className="w-8 h-8 text-pink-600" /> }
+    { number: "2+", label: "Years Experience", icon: <Award className="w-8 h-8 text-pink-600" /> },
+    { number: "10+", label: "Clients Helped", icon: <Users className="w-8 h-8 text-pink-600" /> },
+    { number: "100+", label: "Content Reached", icon: <BarChart2 className="w-8 h-8 text-pink-600" /> }
   ];
 
   return (
@@ -52,19 +52,18 @@ const About = () => {
             className="space-y-6 text-lg leading-relaxed"
           >
             <motion.p variants={fadeIn}>
-              I'm a <span className="font-secondary text-pink-700">Virtual Assistant</span> with a deep passion for helping visual artists 
-              showcase their work in ways that attract their ideal clients.
-            </motion.p>
-            <motion.p variants={fadeIn}>
-              My journey began when planning my wedding revealed the incredible artistry behind 
-              professional photography. I was captivated by how photographers translate moments 
-              into lasting emotional connections.
-            </motion.p>
-            <motion.p variants={fadeIn}>
-              Now I combine <span className="font-semibold text-pink-700">marketing expertise</span> with my appreciation for visual storytelling 
-              to help photographers develop authentic, high-converting online presences.
-            </motion.p>
-          
+  I'm a <span className="font-secondary text-pink-700">Virtual Business Assistant</span> with a passion for 
+  helping entrepreneurs and small business owners streamline their operations and reclaim their time.
+</motion.p>
+<motion.p variants={fadeIn}>
+  My journey began when managing my own business showed me how overwhelming administrative tasks 
+  can distract from core business growth. I discovered the transformative power of organized systems 
+  and efficient workflows.
+</motion.p>
+<motion.p variants={fadeIn}>
+  Now I combine <span className="font-semibold text-pink-700">operational expertise</span> with my love for 
+  productivity systems to help clients build sustainable businesses through strategic support.
+</motion.p>
           </motion.div>
 
           <motion.div
@@ -83,10 +82,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute -bottom-5 -right-5 bg-white p-4 rounded-xl shadow-lg border border-gray-200">
-              <p className="text-sm font-semibold text-gray-700">Fun Fact:</p>
-              <p className="text-xs text-gray-600">Wedding photography enthusiast</p>
-            </div>
+           
           </motion.div>
         </div>
 
