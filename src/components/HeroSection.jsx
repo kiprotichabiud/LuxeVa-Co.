@@ -43,16 +43,23 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center justify-center gap-2 bg-gradient-to-r from-pink-700 to-pink-500 text-white px-8 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl"
-              >
-                Book a Discovery Call
-                <ChevronRight className="w-5 h-5" />
-              </motion.button>
-             
-            </div>
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="flex items-center justify-center gap-2 bg-gradient-to-r from-pink-700 to-pink-500 text-white px-8 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl"
+    onClick={() => {
+      // Open Calendly in a new tab
+      window.open(
+        "https://calendly.com/jepkoechherma990/30min?fbclid=PAZXh0bgNhZW0CMTEAAaaCQxrwO_LRTtCbs0Sb3UtSHcVXCazHIHFqv9bvq4miEDDVCGrEw-oF4K0_aem_CwYh1h-TKzMaZ-wzSkv9sw&month=2025-04",
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }}
+  >
+    Book a Discovery Call
+    <ChevronRight className="w-5 h-5" />
+  </motion.button>
+</div>
 
           </motion.div>
 
