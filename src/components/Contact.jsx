@@ -120,7 +120,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-medium text-gray-700">Email</h4>
                     <a href="mailto:hello@yourdomain.com" className="text-gray-600 hover:text-pink-600 transition-colors">
-                      hello@yourdomain.com
+                      hermajepkoech.com
                     </a>
                   </div>
                 </div>
