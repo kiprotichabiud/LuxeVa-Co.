@@ -5,6 +5,7 @@ import { ChevronRight, X } from "lucide-react";
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBookingSuccess, setIsBookingSuccess] = useState(false);
+  const [activeTab, setActiveTab] = useState("booking");
   const calendlyRef = useRef(null);
 
   // Load Calendly script
@@ -17,38 +18,43 @@ const HeroSection = () => {
     const handleMessage = (e) => {
       if (e.data.event === 'calendly.event_scheduled') {
         setIsBookingSuccess(true);
+        setActiveTab("booking");
       }
     };
 
     window.addEventListener('message', handleMessage);
 
     return () => {
-      document.body.removeChild(script);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
       window.removeEventListener('message', handleMessage);
     };
   }, []);
 
   // Initialize Calendly when modal opens
   useEffect(() => {
-    if (isModalOpen && window.Calendly) {
+    if (isModalOpen && window.Calendly && activeTab === "booking" && calendlyRef.current) {
       window.Calendly.initInlineWidget({
         url: 'https://calendly.com/jepkoechherma990/30min',
         parentElement: calendlyRef.current,
         prefill: {},
-        utm: {}
+        utm: {},
+        style: { minWidth: '320px', height: '100%' }
       });
     }
-  }, [isModalOpen]);
+  }, [isModalOpen, activeTab]);
 
   const openModal = () => {
     setIsModalOpen(true);
-    document.body.style.overflow = 'hidden'; // Prevent scrolling
+    setActiveTab("booking");
+    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setIsBookingSuccess(false);
-    document.body.style.overflow = 'auto'; // Re-enable scrolling
+    document.body.style.overflow = 'auto';
   };
 
   return (
@@ -113,61 +119,84 @@ const HeroSection = () => {
 
       {/* Full-Page Booking Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-white z-50 overflow-y-auto">
-          <div className="min-h-screen flex flex-col">
-            {/* Modal Header */}
-            <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center">
-              <h2 className="text-2xl font-bold">Schedule a Discovery Call</h2>
-              <button 
-                onClick={closeModal}
-                className="p-2 rounded-full hover:bg-gray-100 transition-colors"
-                aria-label="Close modal"
+        <div className="fixed inset-0 bg-white z-50 flex flex-col h-screen w-screen">
+          {/* Modal Header */}
+          <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-4 py-3 sm:px-6 sm:py-4 flex justify-between items-center">
+            <h2 className="text-xl sm:text-2xl font-bold">
+              {activeTab === "booking" ? "Schedule a Call" : "Call Information"}
+            </h2>
+            <button 
+              onClick={closeModal}
+              className="p-1 rounded-full hover:bg-gray-100 transition-colors"
+              aria-label="Close modal"
+            >
+              <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-500" />
+            </button>
+          </div>
+
+          {/* Mobile Tabs */}
+          <div className="md:hidden border-b border-gray-200">
+            <div className="flex">
+              <button
+                className={`flex-1 py-3 text-sm font-medium ${activeTab === "booking" ? 'border-b-2 border-pink-600 text-pink-600' : 'text-gray-500'}`}
+                onClick={() => setActiveTab("booking")}
               >
-                <X className="w-6 h-6 text-gray-500" />
+                Booking
+              </button>
+              <button
+                className={`flex-1 py-3 text-sm font-medium ${activeTab === "info" ? 'border-b-2 border-pink-600 text-pink-600' : 'text-gray-500'}`}
+                onClick={() => setActiveTab("info")}
+              >
+                Information
               </button>
             </div>
+          </div>
 
-            {/* Modal Content */}
-            <div className="flex-1 flex flex-col md:flex-row">
-              {/* Calendly Widget - Takes full width */}
-              <div className="flex-1 p-4 md:p-6">
-                <div 
-                  ref={calendlyRef}
-                  className="calendly-inline-widget w-full h-full min-h-[80vh]"
-                />
+          {/* Modal Content */}
+          <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
+            {/* Calendly Widget */}
+            <div className={`${activeTab === "booking" ? 'flex' : 'hidden'} md:flex flex-1 h-full`}>
+              <div 
+                ref={calendlyRef}
+                className="calendly-inline-widget w-full h-full"
+                style={{ minHeight: 'calc(100vh - 120px)' }}
+              />
+            </div>
+
+            {/* Info Section */}
+            <div className={`
+              ${activeTab === "info" ? 'flex flex-col' : 'hidden'} 
+              md:flex md:w-80 bg-gray-50 p-4 sm:p-6 
+              border-t md:border-t-0 md:border-l border-gray-200
+              overflow-y-auto h-full
+            `}>
+              <div className="space-y-6 md:sticky md:top-20 flex-1">
+                <div>
+                  <h3 className="font-semibold text-lg mb-3">What We'll Cover</h3>
+                  <ul className="space-y-2 text-gray-700 pl-4">
+                    <li className="list-disc">Your business goals</li>
+                    <li className="list-disc">Current pain points</li>
+                    <li className="list-disc">How I can help</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="font-semibold text-lg mb-3">Integrations</h3>
+                  <ul className="space-y-2 text-gray-700 pl-4">
+                    <li className="list-disc">Google Workspace</li>
+                    <li className="list-disc">Microsoft 365</li>
+                    <li className="list-disc">CRM Systems</li>
+                  </ul>
+                </div>
               </div>
 
-              {/* Sidebar with Info - Only visible on larger screens */}
-              <div className="md:w-80 bg-gray-50 p-6 border-l border-gray-200 hidden md:block">
-                <div className="space-y-8 sticky top-20">
-                  <div>
-                    <h3 className="font-semibold text-lg mb-3">Lectures</h3>
-                    <ul className="space-y-2 text-gray-700">
-                      <li className="flex items-start">
-                        <span className="mr-2">•</span>
-                        <span>Scheduling automation</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="mr-2">•</span>
-                        <span>Customizable availability</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3 className="font-semibold text-lg mb-3">Integrations</h3>
-                    <ul className="space-y-2 text-gray-700">
-                      <li className="flex items-start">
-                        <span className="mr-2">•</span>
-                        <span>Google ecosystem</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="mr-2">•</span>
-                        <span>Microsoft ecosystem</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+              <div className="pt-4 md:hidden">
+                <button
+                  onClick={() => setActiveTab("booking")}
+                  className="w-full py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors text-sm"
+                >
+                  Back to Booking
+                </button>
               </div>
             </div>
           </div>
@@ -180,20 +209,20 @@ const HeroSection = () => {
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 text-center"
+            className="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4 p-6 text-center"
           >
-            <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-6">
-              <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+              <svg className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Booking Confirmed!</h3>
-            <p className="text-gray-600 mb-6">
-              Thank you for scheduling a discovery call. You'll receive a confirmation email shortly.
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Booking Confirmed!</h3>
+            <p className="text-gray-600 mb-4">
+              You'll receive a confirmation email with the details shortly.
             </p>
             <button
               onClick={closeModal}
-              className="w-full px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors duration-300"
+              className="w-full px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors"
             >
               Close
             </button>
