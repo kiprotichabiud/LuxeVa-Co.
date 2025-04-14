@@ -97,7 +97,7 @@ const About = () => {
           </motion.p>
           
           <motion.h2 variants={fadeIn} className="text-4xl md:text-5xl font-serif font-medium text-gray-900 mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-pink-400">Elevated Support</span> for Visionaries
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-pink-500">Elevated Support</span> for Visionaries
           </motion.h2>
           
           <motion.p variants={fadeIn} className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
