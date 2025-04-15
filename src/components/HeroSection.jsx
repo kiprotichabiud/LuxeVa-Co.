@@ -36,7 +36,7 @@ const HeroSection = () => {
   useEffect(() => {
     if (isModalOpen && window.Calendly && activeTab === "booking" && calendlyRef.current) {
       window.Calendly.initInlineWidget({
-        url: 'https://calendly.com/jepkoechherma990/30min',
+        url: 'https://calendly.com/luxevaandco/45min?fbclid=PAZXh0bgNhZW0CMTEAAaeq7uOMD5hzkXVpGYbfZwDnVdPld3uDSP_pRoqQhZc8RlmviIXWyWmQhM9poQ_aem_GIM4a6XMJAamrZgtKgLmaQ&month=2025-04',
         parentElement: calendlyRef.current,
         prefill: {},
         utm: {},
@@ -58,7 +58,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative px-4 sm:px-6 pt-12 md:pt-16 lg:pt-20 pb-16 md:pb-24 lg:pb-32 bg-gradient-to-br from-pink-100 to-pink-200 overflow-hidden">
+    <section className="relative px-4 sm:px-6 pt-12 md:pt-16 lg:pt-20 pb-16 md:pb-24 lg:pb-32 bg-gradient-to-br from-pink-50 to-pink-100 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
         <div className="absolute top-20 -left-20 w-64 h-64 bg-[url('https://img.icons8.com/ios-filled/100/ff6b9a/flower.png')] bg-contain bg-no-repeat opacity-30"></div>
