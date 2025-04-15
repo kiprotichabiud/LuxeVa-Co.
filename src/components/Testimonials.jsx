@@ -93,9 +93,9 @@ const NewsletterSubscription = () => {
           {/* Right column: Image and visual elements */}
           <div className="relative">
             {/* Main image */}
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-800">
+            <div className="relative z-10 rounded-t-full overflow-hidden shadow-inline">
               <img 
-                src="/api/placeholder/600/400" 
+                src="src/assets/image2.png" 
                 alt="Virtual assistant at work"
                 className="w-full h-full object-cover"
               />
