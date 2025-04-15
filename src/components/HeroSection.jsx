@@ -105,7 +105,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center"
           >
-            <div className="h-[60vh] w-full max-w-md lg:max-w-lg rounded-t-full border-b-pink-900 shadow-2xl overflow-hidden ">
+           <div class="h-dvh w-full max-w-md lg:max-w-lg rounded-t-full border-b-pink-900 shadow-2xl overflow-hidden">
               <img
                 src="src/assets/image1.png"
                 alt="Professional virtual assistant at work"
