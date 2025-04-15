@@ -103,28 +103,15 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:w-1/2 mt-6 lg:mt-0 flex justify-center lg:justify-end"
+            className="lg:w-1/2 w-full flex justify-center order-1 lg:order-2"
           >
-            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md overflow-hidden">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-  <img
-    src="src/assets/image1.png" // Replace with your actual image path
-    alt="Herma Jepkoech, Founder & Lead Virtual Assistant"
-    className="w-full h-full object-cover object-center"
-    loading="lazy"
-  />
-  {/* Optional overlay with name/title - remove if not needed */}
-  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/40 to-transparent p-6 text-white">
-   
-  </div>
-
-                <img
-                  src="src/assets/image1.png"
-                  alt="Professional virtual assistant at work"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
+            <div className="relative w-full max-w-sm aspect-[3/4] rounded-t-full overflow-hidden shadow-xl border-b-4 border-pink-200">
+              <img
+                src="src/assets/image1.png"
+                alt="Professional virtual assistant at work"
+                className="w-full h-full object-cover object-center"
+                loading="eager" // Changed to eager for mobile priority
+              />
             </div>
           </motion.div>
         </div>
