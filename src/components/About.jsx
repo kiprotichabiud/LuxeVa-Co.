@@ -149,16 +149,18 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-              {/* Placeholder for image - replace with your actual image */}
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-full p-6 inline-block mb-4 shadow-sm">
-                    <Award className="w-10 h-10 text-pink-600 mx-auto" />
-                  </div>
-                  <p className="font-serif text-gray-700 italic">Herma Jepkoech</p>
-                  <p className="text-sm text-gray-500 mt-1">Founder & Lead Virtual Assistant</p>
-                </div>
-              </div>
+  <img
+    src="src/assets/image3.png" // Replace with your actual image path
+    alt="Herma Jepkoech, Founder & Lead Virtual Assistant"
+    className="w-full h-full object-cover object-center"
+    loading="lazy"
+  />
+  {/* Optional overlay with name/title - remove if not needed */}
+  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 text-white">
+    <p className="font-serif text-lg italic">Herma Jepkoech</p>
+    <p className="text-sm opacity-90">Founder & Lead Virtual Assistant</p>
+  </div>
+
               
               {/* Decorative elements */}
               <div className="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-pink-200 opacity-20 blur-xl"></div>

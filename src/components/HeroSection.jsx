@@ -58,15 +58,15 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative px-4 sm:px-6 pt-12 md:pt-16 lg:pt-20 pb-16 md:pb-24 lg:pb-32 bg-gradient-to-br from-pink-50 to-pink-100 overflow-hidden">
+    <section className="relative px-4 sm:px-6 pt-8 md:pt-12 lg:pt-16 pb-12 md:pb-16 lg:pb-20 bg-gradient-to-br from-pink-50 to-pink-100 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
         <div className="absolute top-20 -left-20 w-64 h-64 bg-[url('https://img.icons8.com/ios-filled/100/ff6b9a/flower.png')] bg-contain bg-no-repeat opacity-30"></div>
         <div className="absolute bottom-10 -right-10 w-72 h-72 bg-[url('https://img.icons8.com/ios-filled/100/9c6bff/flower.png')] bg-contain bg-no-repeat opacity-30"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-2 lg:gap-4">
           {/* Text Content - Tightened spacing */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
@@ -74,13 +74,13 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="lg:w-1/2 text-center lg:text-left"
           >
-            <h1 className="text-5xl sm:text-4xl lg:text-5xl font-primary font-bold text-black mb-4 leading-tight">
+            <h1 className="text-4xl sm:text-4xl lg:text-5xl font-primary font-bold text-black mb-3 leading-tight">
               <span className="block">Organized, Efficient</span>
               <span className="block">and Simplified</span>
               <span className="text-pink-600">Business</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-gray-900 font-secondary mb-6 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg text-gray-900 font-secondary mb-5 max-w-xl mx-auto lg:mx-0">
               I help ambitious women entrepreneurs reclaim their time through personalized virtual support.
               Let me handle the details while you focus on growing your empire.
             </p>
@@ -89,7 +89,7 @@ const HeroSection = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 bg-gradient-to-r from-pink-600 to-pink-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
+                className="flex items-center gap-2 bg-gradient-to-r from-pink-600 to-pink-500 text-white px-6 sm:px-8 py-3 rounded-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
                 onClick={openModal}
               >
                 Book a Discovery Call
@@ -103,14 +103,25 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:w-1/2 mt-6 lg:mt-0 flex justify-center"
+            className="lg:w-1/2 mt-6 lg:mt-0 flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg overflow-hidden">
-              <div className="aspect-[3/4] w-full rounded-t-full overflow-hidden shadow-2xl transition-transform duration-300 transform hover:scale-105 border-2 border-pink-200">  
+            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md overflow-hidden">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+  <img
+    src="src/assets/image1.png" // Replace with your actual image path
+    alt="Herma Jepkoech, Founder & Lead Virtual Assistant"
+    className="w-full h-full object-cover object-center"
+    loading="lazy"
+  />
+  {/* Optional overlay with name/title - remove if not needed */}
+  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/40 to-transparent p-6 text-white">
+   
+  </div>
+
                 <img
                   src="src/assets/image1.png"
                   alt="Professional virtual assistant at work"
-                  className="w-full h-full object-cover "
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
