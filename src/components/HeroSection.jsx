@@ -58,7 +58,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative px-4 sm:px-6 py-16 md:py-24 lg:py-32 bg-gradient-to-br from-pink-50 to-pink-100 overflow-hidden">
+    <section className="relative px-4 sm:px-6 pt-12 md:pt-16 lg:pt-20 pb-16 md:pb-24 lg:pb-32 bg-gradient-to-br from-pink-100 to-pink-200 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
         <div className="absolute top-20 -left-20 w-64 h-64 bg-[url('https://img.icons8.com/ios-filled/100/ff6b9a/flower.png')] bg-contain bg-no-repeat opacity-30"></div>
@@ -66,21 +66,21 @@ const HeroSection = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
-          {/* Text Content */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
+          {/* Text Content - Tightened spacing */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="lg:w-1/2 text-center lg:text-left"
           >
-            <h1 className="text-4xl sm:text-5xl mt-10 lg:text-6xl font-primary font-bold text-black mb-6 leading-tight">
+            <h1 className="text-5xl sm:text-4xl lg:text-5xl font-primary font-bold text-black mb-4 leading-tight">
               <span className="block">Organized, Efficient</span>
               <span className="block">and Simplified</span>
               <span className="text-pink-600">Business</span>
             </h1>
 
-            <p className="text-lg text-gray-900 font-secondary mb-8 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg text-gray-900 font-secondary mb-6 max-w-2xl mx-auto lg:mx-0">
               I help ambitious women entrepreneurs reclaim their time through personalized virtual support.
               Let me handle the details while you focus on growing your empire.
             </p>
@@ -89,34 +89,31 @@ const HeroSection = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 bg-gradient-to-r from-pink-600 to-pink-500 text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="flex items-center gap-2 bg-gradient-to-r from-pink-600 to-pink-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
                 onClick={openModal}
               >
                 Book a Discovery Call
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </motion.button>
             </div>
           </motion.div>
 
-          {/* Image Side - Improved Responsiveness */}
+          {/* Image Side - Compact design */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center"
+            className="lg:w-1/2 mt-6 lg:mt-0 flex justify-center"
           >
-            <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg overflow-hidden">
-              {/* Container with responsive aspect ratio and rounded top */}
-              <div className="aspect-[3/4] w-full rounded-t-full overflow-hidden shadow-2xl">
+            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg overflow-hidden">
+              <div className="aspect-[3/4] w-full rounded-t-full overflow-hidden shadow-2xl transition-transform duration-300 transform hover:scale-105 border-2 border-pink-200">  
                 <img
                   src="src/assets/image1.png"
                   alt="Professional virtual assistant at work"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover "
                   loading="lazy"
                 />
               </div>
-              {/* Decorative bottom border */}
-              <div className="h-1 w-full bg-pink-900"></div>
             </div>
           </motion.div>
         </div>
