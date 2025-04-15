@@ -74,13 +74,13 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="lg:w-1/2 text-center lg:text-left"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-primary font-bold text-black mb-6 leading-tight">
               <span className="block">Organized, Efficient</span>
               <span className="block">and Simplified</span>
               <span className="text-pink-600">Business</span>
             </h1>
 
-            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg text-gray-900 font-secondary mb-8 max-w-2xl mx-auto lg:mx-0">
               I help ambitious women entrepreneurs reclaim their time through personalized virtual support.
               Let me handle the details while you focus on growing your empire.
             </p>
@@ -89,7 +89,7 @@ const HeroSection = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 bg-gradient-to-r from-pink-600 to-pink-500 text-white px-8 py-4 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                className="flex items-center gap-2 bg-gradient-to-r from-pink-600 to-pink-500 text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={openModal}
               >
                 Book a Discovery Call
@@ -103,11 +103,11 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:w-1/2 mt-10 lg:mt-0 flex justify-center"
+            className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center"
           >
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl w-full max-w-md aspect-[4/5]">
+            <div className=" h-[90vh] w-full max-w-md lg:max-w-lg rounded-t-full border-b-pink-200 shadow-2xl overflow-hidden ">
               <img
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1280&q=80"
+                src="src/assets/image1.png"
                 alt="Professional virtual assistant at work"
                 className="w-full h-full object-cover"
                 loading="lazy"

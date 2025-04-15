@@ -1,174 +1,152 @@
-import React, { useRef, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import React, { useState } from "react";
+import { Send, CheckCircle, AlertCircle } from "lucide-react";
 
-const Testimonials = () => {
-  const testimonials = [
-    {
-      quote: "My VA completely transformed my business operations. The systems implemented saved me 15+ hours weekly.",
-      author: "Alexandra R.",
-      role: "Marketing Agency CEO",
-      rating: 5,
-      highlight: "15+ hours saved weekly",
-      image: "/client1.jpg"
-    },
-    {
-      quote: "The organization systems my VA created turned my chaotic workflow into a well-oiled machine.",
-      author: "James L.",
-      role: "Fitness Entrepreneur",
-      rating: 5,
-      highlight: "3x productivity boost",
-      image: "/client2.jpg"
-    },
-    {
-      quote: "From inbox zero to calendar mastery, my VA has become my business's secret weapon.",
-      author: "Sophia M.",
-      role: "Consulting Firm Owner",
-      rating: 5,
-      highlight: "Inbox zero maintained",
-      image: "/client3.jpg"
-    },
-    {
-      quote: "Our customer service response times improved by 75% while maintaining our brand voice perfectly.",
-      author: "David K.",
-      role: "E-commerce Founder",
-      rating: 5,
-      highlight: "75% faster responses",
-      image: "/client4.jpg"
-    },
-    {
-      quote: "The onboarding system my VA created reduced training time from 3 weeks to 4 days.",
-      author: "Priya N.",
-      role: "Tech Startup COO",
-      rating: 5,
-      highlight: "83% faster onboarding",
-      image: "/client5.jpg"
+const NewsletterSubscription = () => {
+  const [email, setEmail] = useState("");
+  const [subscriptionStatus, setSubscriptionStatus] = useState(null); // null, "success", "error"
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Simulate subscription process
+    if (email && email.includes("@") && email.includes(".")) {
+      setSubscriptionStatus("success");
+      setEmail("");
+      // In a real application, you would send this to your backend
+    } else {
+      setSubscriptionStatus("error");
     }
-  ];
-
-  // Double the array for seamless looping
-  const scrollingTestimonials = [...testimonials, ...testimonials];
-  const containerRef = useRef(null);
-  const speed = 30; // pixels per second (slower for better visibility)
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    let animationId;
-    let startTime;
-    let progress = 0;
-    const containerWidth = container.scrollWidth / 2; // Since we doubled the items
-
-    const animate = (timestamp) => {
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
-      progress = (elapsed / 1000) * speed;
-      
-      // Reset when reaching halfway (since we duplicated the items)
-      if (progress >= containerWidth) {
-        progress = 0;
-        startTime = timestamp;
-        container.scrollLeft = 0;
-      } else {
-        container.scrollLeft = progress;
-      }
-      
-      animationId = requestAnimationFrame(animate);
-    };
-
-    animationId = requestAnimationFrame(animate);
-
-    return () => {
-      cancelAnimationFrame(animationId);
-    };
-  }, []);
+  };
 
   return (
-    <section id="testimonials" className="relative px-6 py-20 overflow-hidden bg-gradient-to-br from-pink-50 to-white">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-10">
-        <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-pink-200 mix-blend-multiply filter blur-xl"></div>
-        <div className="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-pink-100 mix-blend-multiply filter blur-xl"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-gray-900">
-            Client Success Stories
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            See how I've helped businesses thrive
-          </p>
-          <div className="w-20 h-1 bg-pink-600 mx-auto mt-6"></div>
-        </div>
-
-        {/* Scrolling container with fixed height */}
-        <div className="relative h-[420px] overflow-hidden py-4">
-          <div 
-            ref={containerRef}
-            className="flex overflow-x-auto scrollbar-hide h-full items-center"
-            style={{ scrollbarWidth: 'none' }}
-          >
-            {scrollingTestimonials.map((testimonial, index) => (
-              <div 
-                key={`${testimonial.author}-${index}`}
-                className="inline-flex px-4 w-full sm:w-1/2 lg:w-1/3 h-full"
-                style={{ minWidth: 'calc(100%/3)' }}
-              >
-                <motion.div
-                  className="bg-white p-6 rounded-3xl shadow-lg h-[360px] border border-pink-100 flex flex-col"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  {/* Profile image */}
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-full overflow-hidden border-3 border-pink-200 shadow-md">
-                      <div className="w-full h-full bg-pink-100 flex items-center justify-center text-pink-600">
-                        {testimonial.image ? (
-                          <img 
-                            src={testimonial.image} 
-                            alt={testimonial.author}
-                            className="w-full h-full object-cover"
-                          />
-                        ) : (
-                          <span className="text-xl font-bold">
-                            {testimonial.author.charAt(0)}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-gray-900">{testimonial.author}</h3>
-                      <p className="text-sm text-pink-600">{testimonial.role}</p>
-                    </div>
-                  </div>
-
-                  {/* Rating */}
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-pink-500 text-pink-500" />
-                    ))}
-                  </div>
-
-                  {/* Quote */}
-                  <blockquote className="text-gray-700 italic mb-4 leading-relaxed flex-grow">
-                    "{testimonial.quote}"
-                  </blockquote>
-
-                  {/* Highlight */}
-                  <div className="mt-auto pt-3 border-t border-pink-100">
-                    <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-pink-50 text-pink-700">
-                      {testimonial.highlight}
-                    </span>
-                  </div>
-                </motion.div>
+    <section className="relative w-full overflow-hidden bg-pink-100 text-white">
+      <div className="max-w-7xl mx-auto px-6 py-20 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Left column: Text content */}
+          <div className="relative z-10">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Stay Connected, Stay <span className="text-pink-400">Organized</span>
+            </h2>
+            
+            <p className="text-lg text-gray-300 mb-8 max-w-lg">
+              Don't miss out on virtual assistant tips, productivity hacks, and exclusive insights. Join our community of busy professionals who've transformed their workflow.
+            </p>
+            
+            <div className="mb-10">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center">
+                  <CheckCircle className="w-5 h-5 text-pink-400" />
+                </div>
+                <p className="text-gray-200">Weekly actionable productivity tips</p>
               </div>
-            ))}
+              
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center">
+                  <CheckCircle className="w-5 h-5 text-pink-400" />
+                </div>
+                <p className="text-gray-200">Exclusive virtual assistant best practices</p>
+              </div>
+              
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center">
+                  <CheckCircle className="w-5 h-5 text-pink-400" />
+                </div>
+                <p className="text-gray-200">Early access to VA training resources</p>
+              </div>
+            </div>
+            
+            <form onSubmit={handleSubmit} className="relative max-w-md">
+              <div className="relative">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  className="w-full bg-gray-800/70 border border-gray-700 rounded-full py-4 pl-6 pr-36 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                  required
+                />
+                <button 
+                  type="submit"
+                  className="absolute right-1 top-1 bottom-1 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-medium px-6 rounded-full transition-all hover:from-pink-600 hover:to-purple-700 flex items-center gap-2"
+                >
+                  Subscribe Now
+                  <Send className="w-4 h-4" />
+                </button>
+              </div>
+              
+              {subscriptionStatus === "success" && (
+                <div className="absolute mt-2 text-sm flex items-center gap-2 text-green-400">
+                  <CheckCircle className="w-4 h-4" />
+                  <span>Thanks for subscribing! Check your inbox.</span>
+                </div>
+              )}
+              
+              {subscriptionStatus === "error" && (
+                <div className="absolute mt-2 text-sm flex items-center gap-2 text-red-400">
+                  <AlertCircle className="w-4 h-4" />
+                  <span>Please enter a valid email address.</span>
+                </div>
+              )}
+            </form>
+          </div>
+          
+          {/* Right column: Image and visual elements */}
+          <div className="relative">
+            {/* Main image */}
+            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-800">
+              <img 
+                src="/api/placeholder/600/400" 
+                alt="Virtual assistant at work"
+                className="w-full h-full object-cover"
+              />
+              
+              {/* Overlay with stats */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-black/0 p-6">
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <p className="text-3xl font-bold text-pink-400">98%</p>
+                    <p className="text-sm text-gray-300">Client Satisfaction</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl font-bold text-pink-400">15+</p>
+                    <p className="text-sm text-gray-300">Hours Saved Weekly</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl font-bold text-pink-400">3x</p>
+                    <p className="text-sm text-gray-300">Productivity Boost</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-pink-600/30 to-purple-600/30 rounded-full filter blur-3xl opacity-30 z-0"></div>
+            <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-br from-blue-600/30 to-cyan-600/30 rounded-full filter blur-3xl opacity-30 z-0"></div>
+            
+            {/* Audio wave visualization */}
+            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 h-40 w-full flex items-center justify-center z-0 opacity-20">
+              {[...Array(20)].map((_, index) => (
+                <div 
+                  key={index}
+                  className="w-1 mx-px h-6 bg-gradient-to-t from-pink-400 to-purple-500 rounded-full animate-pulse"
+                  style={{ 
+                    height: `${Math.sin(index / 3) * 50 + 60}px`,
+                    animationDelay: `${index * 0.1}s`
+                  }}
+                ></div>
+              ))}
+            </div>
           </div>
         </div>
+      </div>
+      
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-pink-600/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full filter blur-3xl"></div>
       </div>
     </section>
   );
 };
 
-export default Testimonials;
+export default NewsletterSubscription;
