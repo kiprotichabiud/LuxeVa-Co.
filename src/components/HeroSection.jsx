@@ -74,7 +74,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="lg:w-1/2 text-center lg:text-left"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-primary font-bold text-black mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl mt-10 lg:text-6xl font-primary font-bold text-black mb-6 leading-tight">
               <span className="block">Organized, Efficient</span>
               <span className="block">and Simplified</span>
               <span className="text-pink-600">Business</span>
@@ -105,7 +105,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center"
           >
-            <div className=" h-[90vh] w-full max-w-md lg:max-w-lg rounded-t-full border-b-pink-200 shadow-2xl overflow-hidden ">
+            <div className="h-[60vh] w-full max-w-md lg:max-w-lg rounded-t-full border-b-pink-900 shadow-2xl overflow-hidden ">
               <img
                 src="src/assets/image1.png"
                 alt="Professional virtual assistant at work"
