@@ -98,20 +98,25 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Image Side */}
+          {/* Image Side - Improved Responsiveness */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center"
           >
-           <div class="h-dvh w-full max-w-md lg:max-w-lg rounded-t-full border-b-pink-900 shadow-2xl overflow-hidden">
-              <img
-                src="src/assets/image1.png"
-                alt="Professional virtual assistant at work"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
+            <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg overflow-hidden">
+              {/* Container with responsive aspect ratio and rounded top */}
+              <div className="aspect-[3/4] w-full rounded-t-full overflow-hidden shadow-2xl">
+                <img
+                  src="src/assets/image1.png"
+                  alt="Professional virtual assistant at work"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              {/* Decorative bottom border */}
+              <div className="h-1 w-full bg-pink-900"></div>
             </div>
           </motion.div>
         </div>
