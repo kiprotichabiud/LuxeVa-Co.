@@ -58,7 +58,7 @@ const About = () => {
   return (
     <section 
       ref={ref}
-      className="relative overflow-hidden bg-gradient-to-b from-white to-pink-50 py-24 px-6"
+      className="relative overflow-hidden bg-gradient-to-b from-pink-50 to-pink-100 py-24 px-6"
       id="about"
     >
       {/* Luxury decorative elements */}
@@ -81,21 +81,17 @@ const About = () => {
           animate={controls}
           variants={staggerContainer}
         >
-          <motion.div variants={fadeIn} className="flex justify-center mb-4">
-            <div className="bg-gradient-to-br from-pink-500 to-pink-300 text-white w-14 h-14 flex items-center justify-center rounded-full shadow-lg">
-              <Award className="w-6 h-6" />
-            </div>
-          </motion.div>
+        
           
-          <motion.p variants={fadeIn} className="text-sm uppercase tracking-widest text-pink-600 mb-3">
-            The LuxeVA Difference
+          <motion.p variants={fadeIn} className="text-lg uppercase tracking-widest font-tertiary text-pink-600 mb-3">
+          About Luxeva&Co.
           </motion.p>
           
-          <motion.h2 variants={fadeIn} className="text-4xl md:text-5xl font-serif font-medium text-gray-900 mb-6">
+          <motion.h2 variants={fadeIn} className="text-4xl md:text-5xl font-tertiary font-medium text-gray-900 mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-pink-500">Elevated Support</span> for Visionaries
           </motion.h2>
           
-          <motion.p variants={fadeIn} className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
+          <motion.p variants={fadeIn} className="max-w-3xl mx-auto text-lg text-gray-900 font-tertiary leading-relaxed">
             At LuxeVA & Co., we redefine virtual assistance by combining operational excellence with 
             the personal touch of a luxury concierge. Our bespoke solutions empower visionary leaders 
             to focus on what truly matters.
