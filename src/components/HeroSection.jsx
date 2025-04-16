@@ -99,20 +99,20 @@ const HeroSection = () => {
 
           {/* Image Side - Compact design */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:w-1/2 w-full flex justify-center order-1 lg:order-2"
-          >
-            <div className="relative w-full max-w-sm aspect-[3/4] rounded-t-full overflow-hidden shadow-xl border-b-4 border-pink-200">
-              <img
-                src="src/assets/image1.png"
-                alt="Professional virtual assistant at work"
-                className="w-full h-full object-cover object-center"
-                loading="eager" // Changed to eager for mobile priority
-              />
-            </div>
-          </motion.div>
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.8, delay: 0.2 }}
+  className="lg:w-1/2 w-full flex justify-center items-center order-1 lg:order-2 mt-8 md:mt-0"
+>
+  <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-sm aspect-[3/4] rounded-t-full overflow-hidden shadow-xl border-b-4 border-pink-200">
+    <img
+      src="src/assets/image1.png"
+      alt="Professional virtual assistant at work"
+      className="w-full h-full object-cover object-center"
+      loading="eager"
+    />
+  </div>
+</motion.div>
         </div>
       </div>
 
