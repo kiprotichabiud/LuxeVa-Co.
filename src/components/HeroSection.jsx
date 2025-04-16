@@ -77,11 +77,11 @@ const HeroSection = () => {
             <h1 className="text-4xl sm:text-4xl lg:text-5xl font-primary font-bold text-black mb-3 leading-tight">
               <span className="block">Organized, Efficient</span>
               <span className="block">and Simplified</span>
-              <span className="text-pink-600">Business</span>
+              <span className="text-pink-700">Business</span>
             </h1>
 
             <p className="text-base sm:text-lg text-gray-900 font-secondary mb-5 max-w-xl mx-auto lg:mx-0">
-              I help ambitious women entrepreneurs reclaim their time through personalized virtual support.
+              I help ambitious business entrepreneurs reclaim their time through personalized virtual support.
               Let me handle the details while you focus on growing your empire.
             </p>
 
@@ -106,13 +106,12 @@ const HeroSection = () => {
 >
   <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-sm aspect-[3/4] rounded-t-full overflow-hidden shadow-2xl border border-pink-200">
     <img
-      src="src/assets/image1.png"
+      src="/src/assets/image1.png"
       alt="Professional virtual assistant at work"
       className="w-full h-full object-cover object-center"
       loading="lazy"
-      decoding="async"
-      fetchpriority="high"
-      style={{ filter: 'drop-shadow(0 4px 30px rgba(0, 0, 0, 0.1))' }} // Optional shadow effect
+     
+
     />
   </div>
 </motion.div>
