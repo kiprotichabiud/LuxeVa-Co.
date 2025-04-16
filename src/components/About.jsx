@@ -111,7 +111,7 @@ const About = () => {
           >
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
   <img
-    src="src/assets/image3.png" // Replace with your actual image path
+    src="./src/assets/image3.png" // Replace with your actual image path
     alt="Herma Jepkoech, Founder & Lead Virtual Assistant"
     className="w-full h-full object-cover object-center"
     loading="lazy"
@@ -139,30 +139,36 @@ const About = () => {
               Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-pink-400">Signature</span> Services
             </motion.h3>
             
+
             <div className="space-y-6">
-              {services.map((service, index) => (
-                <motion.div 
-                  key={index}
-                  variants={fadeIn}
-                  className="group relative overflow-hidden"
-                >
-                  <div className="relative z-10 bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
-                    <div className="flex items-start gap-4">
-                      <div className={`p-3 rounded-full text-white ${service.color} shadow-md flex-shrink-0`}>
-                        {service.icon}
-                      </div>
-                      
-                      <div>
-                        <h4 className="text-xl font-medium text-gray-900 mb-2">{service.title}</h4>
-                        <p className="text-gray-600">{service.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className={`absolute -bottom-8 -right-8 w-32 h-32 rounded-full ${service.color.replace('bg-gradient-to-br', '')} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}></div>
-                </motion.div>
-              ))}
-            </div>
+  {services.map((service, index) => (
+    <motion.div 
+      key={index}
+      variants={fadeIn}
+      className="group relative overflow-hidden"
+    >
+      {/* Blurred background element */}
+      <div className={`absolute inset-0 backdrop-blur-md ${service.color.replace('bg-gradient-to-br', 'bg')} opacity-0 group-hover:opacity-20 transition-opacity duration-500 -z-10`}></div>
+      
+      {/* Card content */}
+      <div className="relative z-10 bg-white/80 p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 backdrop-blur-sm hover:bg-white/90">
+        <div className="flex items-start gap-4">
+          <div className={`p-3 rounded-full text-white ${service.color} shadow-md flex-shrink-0`}>
+            {service.icon}
+          </div>
+          
+          <div>
+            <h4 className="text-xl font-medium text-gray-900 mb-2">{service.title}</h4>
+            <p className="text-gray-600">{service.description}</p>
+          </div>
+        </div>
+      </div>
+      
+      {/* Floating accent circle (now more subtle) */}
+      <div className={`absolute -bottom-8 -right-8 w-32 h-32 rounded-full ${service.color.replace('bg-gradient-to-br', '')} opacity-10 group-hover:opacity-15 transition-opacity duration-500 blur-lg`}></div>
+    </motion.div>
+  ))}
+</div>
           </motion.div>
         </div>
 
