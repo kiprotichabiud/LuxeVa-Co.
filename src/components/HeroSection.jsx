@@ -58,7 +58,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative px-4 sm:px-6 pt-8 md:pt-12 lg:pt-16 pb-12 md:pb-16 lg:pb-20 bg-gradient-to-br from-pink-50 to-pink-100 overflow-hidden">
+    <section className="relative px-4 sm:px-6 pt-16 md:pt-28 lg:pt-32 pb-12 md:pb-16 lg:pb-20 bg-gradient-to-br from-pink-50 to-pink-100 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
         <div className="absolute top-20 -left-20 w-64 h-64 bg-[url('https://img.icons8.com/ios-filled/100/ff6b9a/flower.png')] bg-contain bg-no-repeat opacity-30"></div>
@@ -86,15 +86,14 @@ const HeroSection = () => {
             </p>
 
             <div className="flex justify-center lg:justify-start">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 bg-gradient-to-r from-pink-600 to-pink-500 text-white px-6 sm:px-8 py-3 rounded-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
-                onClick={openModal}
-              >
-                Book a Discovery Call
-                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
-              </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 bg-pink-500 text-white uppercase tracking-wider text-sm hover:bg-pink-700 hover:bg-opacity-10 transition-all duration-300"
+              onClick={openModal}
+            >
+              BOOK A DISCOVERY CALL
+            </motion.button>
             </div>
           </motion.div>
 

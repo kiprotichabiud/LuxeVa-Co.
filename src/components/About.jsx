@@ -33,12 +33,7 @@ const About = () => {
     }
   };
 
-  const stats = [
-    { value: "97%", label: "Client Retention", icon: <Users className="w-6 h-6" /> },
-    { value: "24hr", label: "Response Time", icon: <Clock className="w-6 h-6" /> },
-    { value: "100+", label: "Businesses Served", icon: <Shield className="w-6 h-6" /> }
-  ];
-
+  
   const services = [
     {
       title: "Executive Support",
@@ -107,37 +102,7 @@ const About = () => {
           </motion.p>
         </motion.div>
 
-        {/* Stats Grid */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24"
-          initial="hidden"
-          animate={controls}
-          variants={staggerContainer}
-        >
-          {stats.map((stat, index) => (
-            <motion.div 
-              key={index}
-              variants={fadeIn}
-              className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 overflow-hidden relative group"
-            >
-              <div className="absolute -top-1 -right-1 w-16 h-16 rounded-bl-full bg-gradient-to-br from-pink-100 to-pink-50 opacity-80 group-hover:opacity-100 transition-opacity"></div>
-              
-              <div className="relative z-10">
-                <div className="flex items-center mb-4">
-                  <div className={`p-2 rounded-full ${index === 0 ? 'bg-pink-100 text-pink-600' : index === 1 ? 'bg-rose-100 text-rose-600' : 'bg-purple-100 text-purple-600'}`}>
-                    {stat.icon}
-                  </div>
-                </div>
-                
-                <h3 className="text-4xl font-serif font-medium mb-2 text-gray-900">
-                  {stat.value}
-                </h3>
-                
-                <p className="text-gray-600">{stat.label}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+        
 
         {/* Services Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
