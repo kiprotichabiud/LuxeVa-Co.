@@ -110,7 +110,7 @@ const About = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative aspect-[4/5] rounded-t-full rounded-br-full overflow-hidden shadow-xl">
   <img
     src= {assets.image3} // Replace with your actual image path
     alt="Herma Jepkoech, Founder & Lead Virtual Assistant"
@@ -185,7 +185,7 @@ const About = () => {
           
           <div className="relative z-10">
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-pink-300 flex items-center justify-center text-white mr-4 shadow-md">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-pink-400 flex items-center justify-center text-white mr-4 shadow-md">
                 <span className="text-xl font-serif">HJ</span>
               </div>
               <div>
