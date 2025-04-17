@@ -90,7 +90,7 @@ const HeroSection = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-pink-500 text-white uppercase tracking-wider text-sm hover:bg-pink-700 hover:bg-opacity-10 transition-all duration-300"
+              className="px-8 py-3 bg-pink-500 text-white uppercase tracking-wider text-sm hover:bg-pink-700 hover:bg-opacity-10 transition-all duration-300 border border-gray-200 shadow-2xl"
               onClick={openModal}
             >
               BOOK A DISCOVERY CALL
