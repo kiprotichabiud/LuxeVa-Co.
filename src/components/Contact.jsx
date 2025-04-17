@@ -12,7 +12,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative px-6 py-28 overflow-hidden bg-gray-50">
+    <section id="contact" className="relative px-6 py-28 overflow-hidden bg-pink-50">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5">
         <div className="absolute top-1/4 left-10 w-64 h-64 rounded-full bg-pink-300 mix-blend-multiply filter blur-xl"></div>
