@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 const services = [
   {
-    title: "Online Business Management (OBM)",
-    description: "Share the load. Make me your strategic business partner and trusted ally.",
+    title: "Online Business  ",
+    description: "Share the load. Make me your strategic business partner today.",
     image: "/images/service1.jpg",
   },
   {
@@ -54,7 +54,7 @@ const itemVariants = {
 
 const Services = () => {
   return (
-    <section className="bg-pink-50 py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-pink-50 py-16 px-4 sm:px-6 lg:px-8 ">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
@@ -66,7 +66,7 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div 
               key={index} 
-              className="text-center text-gray-800 bg-white rounded-lg overflow-hidden shadow-lg"
+              className="text-center text-gray-800 bg-pink-50 rounded-lg overflow-hidden shadow-lg"
               variants={itemVariants}
               whileHover="hover"
             >

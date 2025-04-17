@@ -106,30 +106,7 @@ const Tools = () => {
         }
       ]
     },
-    {
-      category: "Automation",
-      icon: <Zap className="w-5 h-5" />,
-      color: "from-violet-500 to-purple-600",
-      textColor: "text-violet-600",
-      bgColor: "bg-violet-50",
-      description: "Streamlining repetitive tasks",
-      tools: [
-        { 
-          name: "Zapier", 
-          purpose: "Workflow automation", 
-          logo: "⚡",
-          mastery: 97,
-          details: "Multi-step zaps, filters"
-        },
-        { 
-          name: "Airtable", 
-          purpose: "Database automation", 
-          logo: "🧩",
-          mastery: 95,
-          details: "Custom views, automations"
-        }
-      ]
-    }
+    
   ];
 
   return (

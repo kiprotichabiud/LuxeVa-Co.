@@ -33,7 +33,7 @@ const RecentWork = () => {
           {caseStudies.map((study, index) => (
             <div
               key={index}
-              className="bg-pink-200 rounded-3xl p-6 md:p-8 text-gray-900"
+              className="bg-pink-100 rounded-3xl p-6 md:p-8 text-gray-900"
             >
               <h3 className="text-lg md:text-xl font-semibold mb-4 leading-snug">
                 {study.title}
