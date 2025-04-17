@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
+import { assets } from '../assets/assets'
 
 const TestimonialsCarousel = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -153,7 +154,7 @@ const TestimonialsCarousel = () => {
             {/* Main image */}
             <div className="relative z-10 rounded-t-full overflow-hidden shadow-2xl">
               <img 
-                src="src/assets/image2.png" 
+                src= {assets.image2}
                 alt="Virtual assistant at work"
                 className="w-full h-full object-cover"
               />

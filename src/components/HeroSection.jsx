@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, X } from "lucide-react";
+import { assets } from '../assets/assets'
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -106,7 +107,7 @@ const HeroSection = () => {
 >
   <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-sm aspect-[3/4] rounded-t-full overflow-hidden shadow-2xl border border-pink-200">
     <img
-      src="/src/assets/image1.png"
+      src={ assets.image1}
       alt="Professional virtual assistant at work"
       className="w-full h-full object-cover object-center"
       loading="lazy"

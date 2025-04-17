@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Zap, Users, Clock, Shield, ChevronRight, Star, Award } from "lucide-react";
+import { assets } from '../assets/assets'
 
 const About = () => {
   const controls = useAnimation();
@@ -111,7 +112,7 @@ const About = () => {
           >
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
   <img
-    src="./src/assets/image3.png" // Replace with your actual image path
+    src= {assets.image3} // Replace with your actual image path
     alt="Herma Jepkoech, Founder & Lead Virtual Assistant"
     className="w-full h-full object-cover object-center"
     loading="lazy"
