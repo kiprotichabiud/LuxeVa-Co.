@@ -152,7 +152,7 @@ const About = () => {
       <div className={`absolute inset-0 backdrop-blur-md ${service.color.replace('bg-gradient-to-br', 'bg')} opacity-0 group-hover:opacity-20 transition-opacity duration-500 -z-10`}></div>
       
       {/* Card content */}
-      <div className="relative z-10 bg-pink-200 p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 backdrop-blur-sm hover:bg-white/90">
+      <div className="relative z-10 bg-pink-100 p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 backdrop-blur-sm hover:bg-white/90">
         <div className="flex items-start gap-4">
           <div className={`p-3 rounded-full text-white ${service.color} shadow-md flex-shrink-0`}>
             {service.icon}
