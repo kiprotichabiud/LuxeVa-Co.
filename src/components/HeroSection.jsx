@@ -78,7 +78,7 @@ const HeroSection = () => {
             <h1 className="text-4xl sm:text-4xl lg:text-5xl font-primary font-bold text-black mb-3 leading-tight">
               <span className="block">Organized, Efficient</span>
               <span className="block">and Simplified</span>
-              <span className="text-pink-700">Business</span>
+              <span className="text-pink-500">Business</span>
             </h1>
 
             <p className="text-base sm:text-lg text-gray-900 font-quaternary   mb-5 max-w-xl mx-auto lg:mx-0">
