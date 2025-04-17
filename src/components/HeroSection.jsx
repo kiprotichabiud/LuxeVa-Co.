@@ -81,7 +81,7 @@ const HeroSection = () => {
               <span className="text-pink-700">Business</span>
             </h1>
 
-            <p className="text-base font-quaternary sm:text-lg text-gray-900  mb-5 max-w-xl mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg text-gray-900 font-quaternary   mb-5 max-w-xl mx-auto lg:mx-0">
               I help ambitious business entrepreneurs reclaim their time through personalized virtual support.
               Let me handle the details while you focus on growing your empire.
             </p>
@@ -105,7 +105,7 @@ const HeroSection = () => {
   transition={{ duration: 0.8, delay: 0.2 }}
   className="lg:w-1/2 w-full flex justify-center items-center order-1 lg:order-2 mt-8 md:mt-0"
 >
-  <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-sm aspect-[3/4] rounded-t-full overflow-hidden shadow-2xl border border-pink-200">
+  <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-sm aspect-[3/4] rounded-t-full rounded-bl-full overflow-hidden shadow-2xl border border-pink-200">
     <img
       src={ assets.image1}
       alt="Professional virtual assistant at work"
