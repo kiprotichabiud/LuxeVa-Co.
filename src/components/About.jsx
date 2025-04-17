@@ -175,7 +175,7 @@ const About = () => {
 
         {/* Founder's Note */}
         <motion.div
-          className="mt-24 bg-gradient-to-br from-white to-pink-50 rounded-2xl p-8 md:p-12 shadow-sm border border-pink-100 relative overflow-hidden"
+          className="mt-24 bg-pink-50 rounded-2xl p-8 md:p-12 shadow-sm border border-pink-100 relative overflow-hidden"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
