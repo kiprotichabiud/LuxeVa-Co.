@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Instagram, Facebook, X, Menu, X as Close } from "lucide-react";
+import { Instagram, Facebook, Linkedin, Menu, X as Close } from "lucide-react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
-    { name: "Home", path: "#home" },
+    { name: "Home", path: "/" },
     { name: "About", path: "#about" },
     { name: "Services", path: "#services" },
     { name: "Work", path: "#work" },
@@ -51,13 +51,9 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Enhanced Logo */}
-        <motion.div 
-          whileHover={{ scale: 1.03 }}
-          className="flex items-center"
-        >
+        {/* Logo */}
+        <motion.div whileHover={{ scale: 1.03 }} className="flex items-center">
           <a href="#" className="flex items-center gap-2">
-            {/* Diamond Icon */}
             <svg 
               width="32" 
               height="32" 
@@ -67,20 +63,18 @@ const Navbar = () => {
             >
               <path d="M16 0L20.94 12.42L32 16L20.94 19.58L16 32L11.06 19.58L0 16L11.06 12.42L16 0Z"/>
             </svg>
-            
-            {/* Text Logo */}
             <div className="flex flex-col leading-tight">
               <span className="font-primary text-2xl font-bold text-gray-900 tracking-tight">
                 Luxe<span className="text-pink-600">VA</span>
               </span>
-              <span className="font-primary text-black  font-bold">
+              <span className="font-primary text-black font-bold">
                 & CO.
               </span>
             </div>
           </a>
         </motion.div>
 
-        {/* Desktop Menu */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
             <motion.a
@@ -95,10 +89,10 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Social Media Icons - Desktop */}
+        {/* Desktop Social Icons */}
         <div className="hidden md:flex space-x-4">
           <motion.a 
-            href="#" 
+            href="https://www.instagram.com/luxe_virtualassistance/" 
             className="p-2 rounded-full hover:bg-pink-50 text-gray-600 hover:text-pink-600 transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
@@ -106,12 +100,20 @@ const Navbar = () => {
             <Instagram className="w-5 h-5" />
           </motion.a>
           <motion.a 
-            href="#" 
+            href="https://www.facebook.com/herma.simei.2025" 
             className="p-2 rounded-full hover:bg-pink-50 text-gray-600 hover:text-pink-600 transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             <Facebook className="w-5 h-5" />
+          </motion.a>
+          <motion.a 
+            href="https://www.linkedin.com/in/hermajepkoech/" 
+            className="p-2 rounded-full hover:bg-pink-50 text-gray-600 hover:text-pink-600 transition-colors"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Linkedin className="w-5 h-5" />
           </motion.a>
         </div>
 
@@ -130,12 +132,22 @@ const Navbar = () => {
       <AnimatePresence>
         {menuOpen && (
           <motion.div 
-            className="md:hidden fixed inset-0 bg-white z-40 pt-24 px-6"
+            className="md:hidden fixed inset-0 bg-white z-[999] pt-24 px-6"
             initial="hidden"
             animate="visible"
             exit="exit"
             variants={mobileMenuVariants}
           >
+            {/* Close Button Inside Menu */}
+            <div className="absolute top-6 right-6 z-50">
+              <button
+                onClick={() => setMenuOpen(false)}
+                className="text-gray-800 hover:text-pink-600 transition"
+              >
+                <Close className="w-6 h-6" />
+              </button>
+            </div>
+
             <div className="max-w-md mx-auto">
               <motion.div className="flex flex-col space-y-6 py-8">
                 {navItems.map((item) => (
@@ -152,12 +164,13 @@ const Navbar = () => {
                 ))}
               </motion.div>
 
+              {/* Social Icons */}
               <motion.div 
                 className="flex space-x-6 justify-center pt-12"
                 variants={itemVariants}
               >
                 <motion.a 
-                  href="#" 
+                  href="https://www.instagram.com/luxe_virtualassistance/" 
                   className="p-3 rounded-full bg-pink-50 text-pink-600"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
@@ -165,12 +178,20 @@ const Navbar = () => {
                   <Instagram className="w-6 h-6" />
                 </motion.a>
                 <motion.a 
-                  href="#" 
+                  href="https://www.facebook.com/herma.simei.2025" 
                   className="p-3 rounded-full bg-pink-50 text-pink-600"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Facebook className="w-6 h-6" />
+                </motion.a>
+                <motion.a 
+                  href="https://www.linkedin.com/in/hermajepkoech/" 
+                  className="p-3 rounded-full bg-pink-50 text-pink-600"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Linkedin className="w-6 h-6" />
                 </motion.a>
               </motion.div>
             </div>

@@ -24,6 +24,7 @@ const RecentWork = () => {
 
   return (
     <section className="bg-pink-50 py-20 px-6 md:px-10">
+
       <div className="max-w-6xl mx-auto">
         <h2 className="text-center text-4xl md:text-5xl font-tertiary font-semibold text-gray-900 mb-16">
           Case Studies
