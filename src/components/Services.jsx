@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { assets } from '../assets/assets';
-import { a } from 'framer-motion/client';
 
 const services = [
   {
@@ -32,7 +31,7 @@ const services = [
   {
     title: "Project Coordination",
     description: "Flawless execution from planning to delivery with sparkling attention to detail.",
-    image:  assets.image9
+    image: assets.image9
   },
   {
     title: "Online Research",
@@ -46,90 +45,91 @@ const services = [
   },
   {
     title: "Digital Marketing",
-    description: "Enhancing loyalty and experience through effective CRM strategies.",
+    description: "Drive awareness and sales through effective digital strategies.",
     image: assets.image12
   }
 ];
 
 const Services = () => {
-  const itemsPerPage = 3;
-  const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = Math.ceil(services.length / itemsPerPage);
+  const scrollRef = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      goToNext();
+      if (scrollRef.current) {
+        scrollRef.current.scrollBy({ left: 320, behavior: 'smooth' });
+
+        // If scrolled to end, scroll back to start
+        if (
+          scrollRef.current.scrollLeft + scrollRef.current.clientWidth >=
+          scrollRef.current.scrollWidth
+        ) {
+          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        }
+      }
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentPage]);
+  }, []);
 
-  const goToNext = () => {
-    setCurrentPage((prev) => (prev + 1) % totalPages);
+  const scrollLeft = () => {
+    scrollRef.current.scrollBy({ left: -320, behavior: 'smooth' });
   };
 
-  const goToPrevious = () => {
-    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  const scrollRight = () => {
+    scrollRef.current.scrollBy({ left: 320, behavior: 'smooth' });
   };
-
-  const start = currentPage * itemsPerPage;
-  const end = start + itemsPerPage;
-  const currentItems = services.slice(start, end);
 
   return (
     <section className="bg-pink-50 py-16 px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row lg:items-start mb-12">
-          {/* Left Content */}
-          <div className=" pr-8 lg:w-1/3 mb-8 lg:mb-0">
-            <h2 className="text-5xl font-secondary font-medium text-black leading-tight mb-6">
-              Services we offer
-            </h2>
-            <p className="text-gray-900 font-tertiary text-lg mb-6">
-              All of the resources you need to get your small business the help it needs. Spend less time working IN your business and more time working ON it.
-            </p>
-            {/* Bottom Arrows */}
-            <div className="mt-8 flex justify-center items-center gap-6">
-              <button
-                onClick={goToPrevious}
-                className="bg-white shadow-md p-3 rounded-full hover:bg-pink-200 transition"
-              >
-                <ChevronLeft className="w-6 h-6 text-gray-700" />
-              </button>
-              <button
-                onClick={goToNext}
-                className="bg-white shadow-md p-3 rounded-full hover:bg-pink-50 transition"
-              >
-                <ChevronRight className="w-6 h-6 text-gray-700" />
-              </button>
-            </div>
-          </div>
-          
+        <div className="text-center mb-12">
+          <h2 className="text-5xl font-secondary font-medium text-black leading-tight mb-4">
+            Services we offer
+          </h2>
+          <p className="text-gray-900 font-tertiary text-lg max-w-2xl mx-auto">
+            All of the resources you need to get your small business the help it needs.
+            Spend less time working <span className="font-bold">IN</span> your business and more time working <span className="font-bold">ON</span> it.
+          </p>
+        </div>
 
-          {/* Right Cards Section */}
-          <div className="lg:w-2/3 relative">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-700 ease-in-out">
-              {currentItems.map((service, index) => (
-                <div
-                  key={index}
-                  className="bg-pink-100 shadow-2xl rounded-2xl overflow-hidden transform transition duration-500 hover:scale-105"
-                >
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-60 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-tertiary text-black mb-2">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-gray-700">{service.description}</p>
-                  </div>
+        {/* Carousel */}
+        <div className="relative">
+          <div
+            ref={scrollRef}
+            className="flex space-x-6 overflow-x-auto scroll-smooth scrollbar-hide snap-x snap-mandatory px-2 pb-4"
+          >
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 snap-start bg-pink-100 shadow-xl rounded-2xl overflow-hidden w-[320px] transition duration-300 hover:scale-105"
+              >
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-56 object-cover"
+                />
+                <div className="p-5">
+                  <h3 className="text-xl font-tertiary text-black mb-2">{service.title}</h3>
+                  <p className="text-sm text-gray-700">{service.description}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
+          </div>
 
-            
+          {/* Arrows Below */}
+          <div className="mt-8 flex justify-center gap-6">
+            <button
+              onClick={scrollLeft}
+              className="bg-white shadow-md p-3 rounded-full hover:bg-pink-200 transition"
+            >
+              <ChevronLeft className="w-6 h-6 text-gray-700" />
+            </button>
+            <button
+              onClick={scrollRight}
+              className="bg-white shadow-md p-3 rounded-full hover:bg-pink-200 transition"
+            >
+              <ChevronRight className="w-6 h-6 text-gray-700" />
+            </button>
           </div>
         </div>
       </div>
