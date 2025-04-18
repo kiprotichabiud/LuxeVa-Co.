@@ -75,12 +75,12 @@ const Services = () => {
   const currentItems = services.slice(start, end);
 
   return (
-    <section className="bg-[#f8f6f1] py-16 px-6 lg:px-12">
+    <section className="bg-pink-50 py-16 px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-start mb-12">
           {/* Left Content */}
           <div className="lg:w-1/3 mb-8 lg:mb-0">
-            <h2 className="text-4xl font-serif font-medium text-black leading-tight mb-4">
+            <h2 className="text-4xl font-secondary font-medium text-black leading-tight mb-4">
               Services we offer
             </h2>
             <p className="text-gray-700 text-sm">
