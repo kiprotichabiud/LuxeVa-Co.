@@ -101,12 +101,12 @@ const Services = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 snap-start bg-pink-100 shadow-xl rounded-2xl overflow-hidden w-[320px] transition duration-300 hover:scale-105"
+                className="flex-shrink-0 snap-start bg-pink-100  shadow-xl rounded-2xl overflow-hidden w-[320px] transition duration-300 hover:scale-105"
               >
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-56 object-cover"
+                  className="w-full h-64 object-cover"
                 />
                 <div className="p-5">
                   <h3 className="text-xl font-tertiary text-black mb-2">{service.title}</h3>
