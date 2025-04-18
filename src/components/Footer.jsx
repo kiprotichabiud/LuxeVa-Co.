@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Branding and contact */}
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-primary font-bold text-pink-700 mb-2">Jepkoech Herma</h3>
+            <h3 className="text-2xl font-primary font-bold text-pink-700 mb-2">LuxeVA&Co.</h3>
             <p className="text-sm mb-4">Your trusted virtual assistant partner</p>
             
             <div className="flex flex-col items-center md:items-start space-y-2">
@@ -23,7 +23,7 @@ const Footer = () => {
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-2 text-pink-500" />
                 <a href="tel:+1234567890" className="hover:text-pink-600 transition-colors text-sm">
-                  +254 712 345 678
+                  +254758084900
                 </a>
               </div>
             </div>
@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
             
             <p className="text-xs font-primary text-gray-500">
-              &copy; {currentYear} Jepkoech Herma. All rights reserved.
+              &copy; {currentYear} LuxeVa&Co.. All rights reserved.
             </p>
           </div>
         </div>

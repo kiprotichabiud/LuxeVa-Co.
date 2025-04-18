@@ -1,112 +1,135 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const services = [
   {
-    title: "Online Business  ",
-    description: "Share the load. Make me your strategic business partner today.",
-    image: "/images/service1.jpg",
+    title: "Data Entry Wizardry",
+    description: "Precision data handling that keeps your business information flawless and up-to-date.",
+    image: "/images/data-entry.jpg"
   },
   {
-    title: "Virtual Assistant",
-    description: "Stop the overwhelm. Outsource tasks and watch productivity soar.",
-    image: "/images/service2.jpg",
+    title: "Calendar Mastery",
+    description: "Effortless schedule coordination so you never miss another important date.",
+    image: "/images/calendar.jpg"
   },
   {
-    title: "Consulting",
-    description: "Unlock your potential. Transform your business via one-on-one sessions.",
-    image: "/images/service3.jpg",
+    title: "Email Alchemy",
+    description: "Inbox transformation that turns chaos into perfectly organized communication.",
+    image: "/images/email.jpg"
   },
   {
-    title: "Retail Support",
-    description: "Increase your knowledge by tapping into mine. Tailored packages to suit.",
-    image: "/images/service4.jpg",
+    title: "Customer Support",
+    description: "Warm, professional support that makes your clients feel truly valued.",
+    image: "/images/support.jpg"
   },
+  {
+    title: "Travel Planning",
+    description: "Seamless itinerary creation for stress-free business trips and vacations.",
+    image: "/images/travel.jpg"
+  },
+  {
+    title: "Project Coordination",
+    description: "Flawless execution from planning to delivery with sparkling attention to detail.",
+    image: "/images/project.jpg"
+  },
+  {
+    title: "Online Research",
+    description: "Thorough and accurate research tailored to your business needs.",
+    image: "/images/research.jpg"
+  },
+  {
+    title: "Customer Relationship Management",
+    description: "Enhancing loyalty and experience through effective CRM strategies.",
+    image: "/images/crm.jpg"
+  },
+  {
+    title: "Customer Relationship Management",
+    description: "Enhancing loyalty and experience through effective CRM strategies.",
+    image: "/images/crm.jpg"
+  }
 ];
 
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut"
-    }
-  },
-  hover: {
-    y: -5,
-    transition: { duration: 0.2 }
-  }
-};
-
 const Services = () => {
+  const itemsPerPage = 3;
+  const [currentPage, setCurrentPage] = useState(0);
+  const totalPages = Math.ceil(services.length / itemsPerPage);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goToNext();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentPage]);
+
+  const goToNext = () => {
+    setCurrentPage((prev) => (prev + 1) % totalPages);
+  };
+
+  const goToPrevious = () => {
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  };
+
+  const start = currentPage * itemsPerPage;
+  const end = start + itemsPerPage;
+  const currentItems = services.slice(start, end);
+
   return (
-    <section className="bg-pink-50 py-16 px-4 sm:px-6 lg:px-8 ">
+    <section className="bg-[#f8f6f1] py-16 px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-        >
-          {services.map((service, index) => (
-            <motion.div 
-              key={index} 
-              className="text-center text-gray-800 bg-pink-50 rounded-lg overflow-hidden shadow-lg"
-              variants={itemVariants}
-              whileHover="hover"
-            >
-              <motion.img
-                src={service.image}
-                alt={service.title}
-                className="mx-auto w-full h-64 object-cover"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 * index }}
-              />
-              <div className="p-6">
-                <motion.h3 
-                  className="text-lg font-semibold uppercase tracking-wide mb-3"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.1 * index + 0.4 }}
+        <div className="flex flex-col lg:flex-row lg:items-start mb-12">
+          {/* Left Content */}
+          <div className="lg:w-1/3 mb-8 lg:mb-0">
+            <h2 className="text-4xl font-serif font-medium text-black leading-tight mb-4">
+              Services we offer
+            </h2>
+            <p className="text-gray-700 text-sm">
+              All of the resources you need to get your small business the help it needs. Spend less time working IN your business and more time working ON it.
+            </p>
+            {/* Bottom Arrows */}
+            <div className="mt-8 flex justify-center items-center gap-6">
+              <button
+                onClick={goToPrevious}
+                className="bg-white shadow-md p-3 rounded-full hover:bg-yellow-100 transition"
+              >
+                <ChevronLeft className="w-6 h-6 text-gray-700" />
+              </button>
+              <button
+                onClick={goToNext}
+                className="bg-white shadow-md p-3 rounded-full hover:bg-yellow-100 transition"
+              >
+                <ChevronRight className="w-6 h-6 text-gray-700" />
+              </button>
+            </div>
+          </div>
+          
+
+          {/* Right Cards Section */}
+          <div className="lg:w-2/3 relative">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-700 ease-in-out">
+              {currentItems.map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-white shadow-lg rounded-xl overflow-hidden transform transition duration-500 hover:scale-105"
                 >
-                  {service.title}
-                </motion.h3>
-                <motion.p 
-                  className="text-gray-600 text-sm leading-relaxed mb-6"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.1 * index + 0.5 }}
-                >
-                  {service.description}
-                </motion.p>
-                <motion.button 
-                  className="border border-gray-800 text-gray-800 px-6 py-2 text-sm uppercase tracking-widest hover:bg-gray-800 hover:text-white transition"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Learn More
-                </motion.button>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-56 object-cover"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-xl font-serif text-yellow-900 mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-gray-700">{service.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            
+          </div>
+        </div>
       </div>
     </section>
   );

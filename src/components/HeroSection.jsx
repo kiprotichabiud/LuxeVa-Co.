@@ -26,7 +26,7 @@ const HeroSection = () => {
             <h1 className="text-4xl sm:text-4xl lg:text-5xl font-primary font-bold text-black mb-3 leading-tight">
               <span className="block">Organized, Efficient</span>
               <span className="block">and Simplified</span>
-              <span className="text-pink-500">Business</span>
+              <span className="text-pink-400">Business</span>
             </h1>
 
             <p className="text-base font-tertiary sm:text-lg text-gray-900 mb-5 max-w-xl mx-auto lg:mx-0">
@@ -38,7 +38,7 @@ const HeroSection = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-pink-200 text-black uppercase tracking-wider text-sm hover:bg-pink-700 hover:bg-opacity-10 transition-all duration-300 border border-gray-200 shadow-2xl"
+                className="px-8 py-3 bg-pink-300 text-black uppercase tracking-wider text-sm hover:bg-pink-700 hover:bg-opacity-10 transition-all duration-300 border border-gray-200 shadow-2xl"
                 onClick={() => setIsModalOpen(true)}
               >
                 BOOK A DISCOVERY CALL
