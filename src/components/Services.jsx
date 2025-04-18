@@ -81,7 +81,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-start mb-12">
           {/* Left Content */}
-          <div className="lg:w-1/3 mb-8 lg:mb-0">
+          <div className=" pr-8 lg:w-1/3 mb-8 lg:mb-0">
             <h2 className="text-5xl font-secondary font-medium text-black leading-tight mb-6">
               Services we offer
             </h2>
@@ -117,7 +117,7 @@ const Services = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-56 object-cover"
+                    className="w-full h-60 object-cover"
                   />
                   <div className="p-6">
                     <h3 className="text-xl font-tertiary text-black mb-2">
