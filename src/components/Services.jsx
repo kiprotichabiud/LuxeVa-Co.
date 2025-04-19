@@ -80,7 +80,8 @@ const Services = () => {
   };
 
   return (
-    <section className="bg-pink-50 py-16 px-6 lg:px-12">
+    <section className="bg-pink-50 py-16 px-6 lg:px-12"
+      id="services">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-secondary font-medium text-black leading-tight mb-4">
