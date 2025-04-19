@@ -8,7 +8,7 @@ const TestimonialsCarousel = () => {
   
   const testimonials = [
     {
-      name: "Abiud kiprotich",
+      name: "Abiud ",
       role: "Marketing Director",
       company: "Fiver",
       image: "",
@@ -16,9 +16,9 @@ const TestimonialsCarousel = () => {
       rating: 5
     },
     {
-      name: "Laude suits",
+      name: "Ruth",
       role: " Founder",
-      company: "Laude Suits.KE",
+      company: "Mediheal",
       image: "",
       text: "The attention to detail and creative problem-solving approach exceeded all my expectations. My business has grown 230% since implementing their strategies.",
       rating: 5
