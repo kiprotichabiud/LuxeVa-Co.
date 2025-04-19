@@ -94,7 +94,7 @@ const TestimonialsCarousel = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-lg text-black font-quaternary mb-8 max-w-lg"
+              className="text-lg text-black font-tertiary mb-8 max-w-lg"
             >
               Don't just take our word for it. Here's what busy professionals are saying about how we've transformed their workflow and productivity.
             </motion.p>
