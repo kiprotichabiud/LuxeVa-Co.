@@ -10,15 +10,15 @@ const TestimonialsCarousel = () => {
     {
       name: "Abiud kiprotich",
       role: "Marketing Director",
-      company: "TechVision Inc.",
+      company: "Fiver",
       image: "",
       text: "Working with this team transformed our entire workflow. We've saved countless hours and our client satisfaction scores have never been higher.",
       rating: 5
     },
     {
-      name: "Laud suits",
-      role: "Startup Founder",
-      company: "NexGen Solutions",
+      name: "Laude suits",
+      role: " Founder",
+      company: "Laude Suits.KE",
       image: "",
       text: "The attention to detail and creative problem-solving approach exceeded all my expectations. My business has grown 230% since implementing their strategies.",
       rating: 5
@@ -26,7 +26,7 @@ const TestimonialsCarousel = () => {
     {
       name: "Herma",
       role: "Operations Manager",
-      company: "Global Connect",
+      company: "Upwork",
       image: "",
       text: "I was skeptical at first, but the results speak for themselves. Our team is more productive than ever and our clients are thrilled with the improved service.",
       rating: 5
