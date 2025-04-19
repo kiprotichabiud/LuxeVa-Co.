@@ -140,7 +140,7 @@ const Tools = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="bg-white rounded-xl shadow-md border border-pink-100 overflow-hidden transition-transform"
+                className="bg-pink-100 rounded-xl shadow-md border border-pink-100 overflow-hidden transition-transform"
               >
                 <div className="p-6 sm:p-8 flex flex-col h-full">
                   <div className="mb-4">
