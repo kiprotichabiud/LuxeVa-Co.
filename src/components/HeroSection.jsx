@@ -29,7 +29,7 @@ const HeroSection = () => {
               <span className="text-pink-400">Business</span>
             </h1>
 
-            <p className="text-base font-tertiary sm:text-lg text-gray-900 mb-5 max-w-xl mx-auto lg:mx-0">
+            <p className="text-base font-secondary font-normal sm:text-lg text-gray-900 mb-5 max-w-xl mx-auto lg:mx-0">
               I help ambitious business entrepreneurs reclaim their time through personalized virtual support.
               Let me handle the details while you focus on growing your empire.
             </p>

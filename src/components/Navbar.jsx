@@ -58,14 +58,14 @@ const Navbar = () => {
               width="32" 
               height="32" 
               viewBox="0 0 32 32" 
-              className="text-pink-600"
+              className="text-pink-500"
               fill="currentColor"
             >
               <path d="M16 0L20.94 12.42L32 16L20.94 19.58L16 32L11.06 19.58L0 16L11.06 12.42L16 0Z"/>
             </svg>
             <div className="flex flex-col leading-tight">
               <span className="font-primary text-2xl font-bold text-gray-900 tracking-tight">
-                Luxe<span className="text-pink-600">VA</span>
+                Luxe<span className="text-pink-500">VA</span>
               </span>
               <span className="font-primary text-black font-bold">
                 & CO.
@@ -80,7 +80,7 @@ const Navbar = () => {
             <motion.a
               key={item.name}
               href={item.path}
-              className="relative uppercase text-sm font-medium tracking-wider group"
+              className="relative font-semibold uppercase font-secondary tracking-wider group"
               whileHover={{ scale: 1.05 }}
             >
               {item.name}
@@ -154,7 +154,7 @@ const Navbar = () => {
                   <motion.a
                     key={item.name}
                     href={item.path}
-                    className="text-xl font-medium text-gray-800 py-3 border-b border-gray-100"
+                    className="text-xl font-secondary font-semibold text-gray-800 py-3 border-b border-gray-100"
                     variants={itemVariants}
                     onClick={() => setMenuOpen(false)}
                     whileHover={{ x: 10 }}
