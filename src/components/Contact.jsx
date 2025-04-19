@@ -12,7 +12,7 @@ const Contact = () => {
       style={{ backgroundImage: "url('/your-path/Screenshot-from-2025-04-18-10-18-16.png')" }}
     >
       <div className="text-center px-6">
-        <h2 className="text-black text-2xl md:text-4xl lg:text-5xl font-secondary tracking-wide mb-6">
+        <h2 className="text-black text-2xl md:text-4xl lg:text-5xl font-primary tracking-wide mb-6">
           LET'S CREATE SPACE TO BREATHE TOGETHER
         </h2>
         <div className="flex justify-center">

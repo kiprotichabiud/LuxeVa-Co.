@@ -101,22 +101,22 @@ const Tools = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-black mb-3">
+          <h2 className="text-3xl sm:text-4xl font-primary text-black mb-3">
             Essential Digital Toolkit
           </h2>
-          <p className="text-base sm:text-lg text-black max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-black max-w-2xl mx-auto font-secondary">
             Fundamental tools I use to deliver quality support
           </p>
         </div>
 
         {/* Category Selector */}
         <div className="flex justify-center mb-10">
-          <div className="inline-flex flex-wrap justify-center gap-2 rounded-xl bg-white p-2 shadow-sm border border-pink-200">
+          <div className="inline-flex flex-wrap justify-center gap-2 rounded-xl bg-pink-50 p-2 shadow-sm border border-pink-200">
             {toolCategories.map((category, index) => (
               <button
                 key={index}
                 onClick={() => setActiveCategory(index)}
-                className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all ${
+                className={`flex items-center gap-2 px-4 py-2 text-sm font-secondary rounded-lg transition-all ${
                   activeCategory === index
                     ? `text-black bg-gradient-to-r ${category.color} shadow-md`
                     : `text-black hover:bg-pink-100`
@@ -144,14 +144,14 @@ const Tools = () => {
               >
                 <div className="p-6 sm:p-8 flex flex-col h-full">
                   <div className="mb-4">
-                    <h3 className="text-xl sm:text-2xl font-bold text-black mb-1">
+                    <h3 className="text-xl sm:text-2xl font-secondary text-black mb-1">
                       {tool.name}
                     </h3>
-                    <p className="text-sm sm:text-base text-black">{tool.purpose}</p>
+                    <p className="text-sm sm:text-base text-black font-quaternary">{tool.purpose}</p>
                   </div>
 
                   <div className="mb-4 flex-grow">
-                    <p className="text-gray-700 text-sm sm:text-base">{tool.details}</p>
+                    <p className="text-gray-700 text-sm sm:text-base font-quaternary">{tool.details}</p>
                   </div>
 
                   <div>

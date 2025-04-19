@@ -8,26 +8,26 @@ const TestimonialsCarousel = () => {
   
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Abiud kiprotich",
       role: "Marketing Director",
       company: "TechVision Inc.",
-      image: "src/assets/image2.png",
+      image: "",
       text: "Working with this team transformed our entire workflow. We've saved countless hours and our client satisfaction scores have never been higher.",
       rating: 5
     },
     {
-      name: "Michael Chen",
+      name: "Laud suits",
       role: "Startup Founder",
       company: "NexGen Solutions",
-      image: "src/assets/image2.png",
+      image: "",
       text: "The attention to detail and creative problem-solving approach exceeded all my expectations. My business has grown 230% since implementing their strategies.",
       rating: 5
     },
     {
-      name: "Elena Rodriguez",
+      name: "Herma",
       role: "Operations Manager",
       company: "Global Connect",
-      image: "src/assets/image2.png",
+      image: "",
       text: "I was skeptical at first, but the results speak for themselves. Our team is more productive than ever and our clients are thrilled with the improved service.",
       rating: 5
     }
@@ -80,7 +80,7 @@ const TestimonialsCarousel = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-black"
+              className="text-4xl md:text-5xl font-secondary mb-6 leading-tight text-black"
             >
               What Our Clients <motion.span 
                 initial={{ opacity: 0 }}
@@ -94,7 +94,7 @@ const TestimonialsCarousel = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-lg text-black mb-8 max-w-lg"
+              className="text-lg text-black font-quaternary mb-8 max-w-lg"
             >
               Don't just take our word for it. Here's what busy professionals are saying about how we've transformed their workflow and productivity.
             </motion.p>
@@ -151,7 +151,7 @@ const TestimonialsCarousel = () => {
                   animate="center"
                   exit="exit"
                   transition={{ duration: 0.5 }}
-                  className="text-black italic mb-6"
+                  className="text-black font-primary mb-6"
                 >
                   {testimonials[currentTestimonial].text}
                 </motion.p>

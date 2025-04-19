@@ -37,22 +37,22 @@ const About = () => {
   
   const services = [
     {
-      title: "Executive Support",
-      description: "Premium assistance tailored for high-performing entrepreneurs",
+      title: "Client Centricity",
+      description: "We prioritize your needs and work tirelessly to provide solutions that support your unique goals.",
       icon: <Zap className="w-5 h-5" />,
-      color: "bg-gradient-to-br from-pink-500 to-pink-300"
+      color: "bg-pink-400"
     },
     {
-      title: "Strategic Operations",
-      description: "Systems that streamline your business workflow",
+      title: "Innovation",
+      description: "We continually evolve, embracing new tools and methodologies to ensure that our services remain at the forefront of the industry.",
       icon: <ChevronRight className="w-5 h-5" />,
-      color: "bg-gradient-to-br from-rose-500 to-rose-300"
+      color: "bg-pink-400"
     },
     {
-      title: "Brand Excellence",
-      description: "Client experiences that reflect your luxury positioning",
+      title: "Excellence",
+      description: "We are committed to delivering services that meet the highest standards, ensuring precision and reliability in every task we undertake.",
       icon: <Star className="w-5 h-5" />,
-      color: "bg-gradient-to-br from-purple-500 to-purple-300"
+      color: "bg-pink-400"
     }
   ];
 
@@ -84,15 +84,15 @@ const About = () => {
         >
         
           
-          <motion.p variants={fadeIn} className="text-lg uppercase tracking-widest font-tertiary text-pink-600 mb-3">
+          <motion.p variants={fadeIn} className=" uppercase tracking-widest font-secondary font-bold text-3xl text-black mb-3">
           About Luxeva&Co.
           </motion.p>
           
-          <motion.h2 variants={fadeIn} className="text-4xl md:text-5xl font-tertiary font-medium text-gray-900 mb-6">
+          <motion.h2 variants={fadeIn} className="text-4xl md:text-5xl font-primary font-medium text-gray-900 mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-pink-500">Elevated Support</span> for Visionaries
           </motion.h2>
           
-          <motion.p variants={fadeIn} className="max-w-3xl mx-auto text-lg text-gray-900 font-tertiary leading-relaxed">
+          <motion.p variants={fadeIn} className="max-w-3xl mx-auto text-lg text-gray-900 font-quaternary leading-relaxed">
             At LuxeVA & Co., we redefine virtual assistance by combining operational excellence with 
             the personal touch of a luxury concierge. Our bespoke solutions empower visionary leaders 
             to focus on what truly matters.
@@ -119,8 +119,8 @@ const About = () => {
   />
   {/* Optional overlay with name/title - remove if not needed */}
   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 text-white">
-    <p className="font-serif text-lg italic">Herma Jepkoech</p>
-    <p className="text-sm opacity-90">Founder & Lead Virtual Assistant</p>
+    <p className="font-primary text-lg">Herma Jepkoech</p>
+    <p className="text-sm opacity-90 font-quaternary">Lead Virtual Assistant</p>
   </div>
 
               
@@ -136,8 +136,8 @@ const About = () => {
             animate={controls}
             variants={staggerContainer}
           >
-            <motion.h3 variants={fadeIn} className="text-3xl font-serif font-medium text-gray-900 mb-8">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-pink-400">Signature</span> Services
+            <motion.h3 variants={fadeIn} className="text-3xl font-secondary font-medium text-gray-900 mb-8">
+              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-400">Signature</span> Services
             </motion.h3>
             
 
@@ -159,8 +159,8 @@ const About = () => {
           </div>
           
           <div>
-            <h4 className="text-xl font-medium text-gray-900 mb-2">{service.title}</h4>
-            <p className="text-gray-600">{service.description}</p>
+            <h4 className="text-xl font-medium text-black font-secondary mb-2">{service.title}</h4>
+            <p className="text-gray-600 font-quaternary">{service.description}</p>
           </div>
         </div>
       </div>
@@ -185,22 +185,22 @@ const About = () => {
           
           <div className="relative z-10">
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-pink-400 flex items-center justify-center text-white mr-4 shadow-md">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-600 to-pink-500 flex items-center justify-center text-white mr-4 shadow-md">
                 <span className="text-xl font-serif">HJ</span>
               </div>
               <div>
-                <h4 className="font-medium text-gray-900">Herma Jepkoech</h4>
-                <p className="text-sm text-pink-600">Founder, LuxeVA & Co.</p>
+                <h4 className="font-secondary font-medium text-gray-900">Herma Jepkoech</h4>
+                <p className="text-sm text-pink-600">VA Lead,LuxeVA & Co.</p>
               </div>
             </div>
             
             <div className="space-y-4">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                "I founded LuxeVA & Co. with one vision: to provide executive support that feels less like a service and more like an extension of your team. We don't just manage tasks—we anticipate needs, elevate experiences, and become strategic partners in your success."
+              <p className="text-lg text-black font-quaternary leading-relaxed">
+              Herma's journey from navigating the complexities of administrative support to establishing LuxeVA & Co. was driven by a singular vision: to offer bespoke, high-caliber assistance that aligns seamlessly with your professional aspirations
               </p>
               
-              <p className="text-gray-600">
-                Our approach combines meticulous attention to detail with the discretion and sophistication demanded by high-profile clients. When you work with us, you're not just getting an assistant—you're gaining a trusted ally.
+              <p className="text-black font-quaternary leading-relaxed">
+              Our mission is to empower you to achieve greater productivity and work-life harmony by entrusting us with your administrative responsibilities. We achieve this by integrating seamlessly into your workflow, anticipating your needs, and delivering results that exceed expectations.
               </p>
             </div>
           </div>

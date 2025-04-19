@@ -84,12 +84,12 @@ const Services = () => {
       id="services">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-secondary font-medium text-black leading-tight mb-4">
+          <h2 className="text-5xl font-primary font-medium text-black leading-tight mb-4">
             Services we offer
           </h2>
-          <p className="text-gray-900 font-tertiary text-lg max-w-2xl mx-auto">
+          <p className="text-gray-900 font-secondary text-lg max-w-2xl mx-auto">
             All of the resources you need to get your small business the help it needs.
-            Spend less time working <span className="font-bold">IN</span> your business and more time working <span className="font-bold">ON</span> it.
+            Spend less time working in your business and more time working on it.
           </p>
         </div>
 
@@ -110,8 +110,8 @@ const Services = () => {
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-5">
-                  <h3 className="text-xl font-tertiary text-black mb-2">{service.title}</h3>
-                  <p className="text-sm text-gray-700">{service.description}</p>
+                  <h3 className="text-xl font-secondary text-black mb-2">{service.title}</h3>
+                  <p className="text-sm text-gray-700 font-quaternary">{service.description}</p>
                 </div>
               </div>
             ))}
