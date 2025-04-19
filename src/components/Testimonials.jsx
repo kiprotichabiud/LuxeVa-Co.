@@ -129,7 +129,7 @@ const TestimonialsCarousel = () => {
             </motion.div>
             
             <motion.div 
-              className="relative p-8 bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg border border-gray-300 max-w-md shadow-lg"
+              className="relative p-8 bg-pink-100 rounded-lg border border-gray-300 max-w-md shadow-lg"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -274,7 +274,7 @@ const TestimonialsCarousel = () => {
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-800/90 to-gray-800/80 p-6"
+                className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-black/200 p-6"
               >
                 <div className="grid grid-cols-3 gap-4 text-center">
                   {[
@@ -289,7 +289,7 @@ const TestimonialsCarousel = () => {
                       transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                     >
                       <motion.p 
-                        className="text-3xl font-bold text-pink-400"
+                        className="text-3xl font-bold text-white"
                         initial={{ scale: 0.8 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
