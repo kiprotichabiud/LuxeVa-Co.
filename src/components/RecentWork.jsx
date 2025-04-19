@@ -3,28 +3,27 @@ import React from "react";
 const RecentWork = () => {
   const caseStudies = [
     {
-      title: "Collette Noll Interior Design",
+      title: "Executive Inbox Management for C-Level Founder",
       description:
-        "Concept and creation of interior designer Collette Noll’s website, with focus on her variety of client-forward services and recent successful collaborations",
+        "Provided full email oversight, streamlined communications, created filters, and reduced inbox clutter by over 80% within the first month.",
       link: "#"
     },
     {
-      title: "Sofia Pazari Home Goods",
+      title: "Social Media Scheduling for Coaching Brand",
       description:
-        "Website and packaging design for independent maker Sofia Pazari’s marketplace of original beauty, lifestyle, and home goods",
+        "Managed weekly social content calendar, scheduled posts across platforms, and maintained brand consistency using Canva and Buffer.",
       link: "#"
     },
     {
-      title: "Sauce & Slice Pizzeria",
+      title: "CRM Optimization for Online Store Owner",
       description:
-        "Brand identity development and website redesign for family–owned and longstanding Brooklyn–based pizzeria Sauce & Slice",
+        "Cleaned and organized client database in HubSpot, automated follow-ups, and improved client engagement through personalized sequences.",
       link: "#"
     }
   ];
 
   return (
     <section className="bg-pink-50 py-20 px-6 md:px-10">
-
       <div className="max-w-6xl mx-auto">
         <h2 className="text-center text-4xl md:text-5xl font-tertiary font-semibold text-gray-900 mb-16">
           Case Studies
@@ -42,12 +41,7 @@ const RecentWork = () => {
               <p className="text-sm md:text-base mb-4">
                 {study.description}
               </p>
-              <a
-                href={study.link}
-                className="text-sm font-medium underline hover:text-gray-700 transition-colors"
-              >
-                View Project
-              </a>
+              
             </div>
           ))}
         </div>
