@@ -8,26 +8,17 @@ const TestimonialsCarousel = () => {
   
   const testimonials = [
     {
-      name: "Abiud ",
-      role: "Marketing Director",
-      company: "Fiver",
-      image: "",
+      name: "Judith Muthoni", 
       text: "Working with this team transformed our entire workflow. We've saved countless hours and our client satisfaction scores have never been higher.",
       rating: 5
     },
     {
-      name: "Ruth",
-      role: " Founder",
-      company: "Mediheal",
-      image: "",
+      name: "Claire Waithera",
       text: "The attention to detail and creative problem-solving approach exceeded all my expectations. My business has grown 230% since implementing their strategies.",
       rating: 5
     },
     {
-      name: "Herma",
-      role: "Operations Manager",
-      company: "Upwork",
-      image: "",
+      name: "Alex Karanja",
       text: "I was skeptical at first, but the results speak for themselves. Our team is more productive than ever and our clients are thrilled with the improved service.",
       rating: 5
     }
@@ -167,19 +158,10 @@ const TestimonialsCarousel = () => {
                   transition={{ duration: 0.5 }}
                   className="flex items-center gap-4"
                 >
-                  <motion.div 
-                    whileHover={{ scale: 1.1 }}
-                    className="w-12 h-12 rounded-full overflow-hidden bg-gray-300"
-                  >
-                    <img 
-                      src={testimonials[currentTestimonial].image}
-                      alt={testimonials[currentTestimonial].name}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
+                  
                   <div>
-                    <p className="font-medium text-black">{testimonials[currentTestimonial].name}</p>
-                    <p className="text-sm text-gray-600">{testimonials[currentTestimonial].role}, {testimonials[currentTestimonial].company}</p>
+                    <p className="font-secondary text-black">{testimonials[currentTestimonial].name}</p>
+                    <p className="text-sm text-gray-600">{testimonials[currentTestimonial].role} {testimonials[currentTestimonial].company}</p>
                   </div>
                 </motion.div>
               </AnimatePresence>
