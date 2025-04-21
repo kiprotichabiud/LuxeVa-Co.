@@ -16,8 +16,8 @@ const Footer = () => {
             <div className="flex flex-col items-center md:items-start space-y-2">
               <div className="flex items-center">
                 <Mail className="w-4 h-4 mr-2 text-pink-500" />
-                <a href="hermajepkoechgmail.com" className="hover:text-pink-600 transition-colors text-sm">
-                  hermajepkoechgmail.com
+                <a href="jepkoechherma990@gmail.com" className="hover:text-pink-600 transition-colors text-sm">
+                jepkoechherma990@gmail.com
                 </a>
               </div>
               <div className="flex items-center">
