@@ -128,7 +128,7 @@ const Tools = () => {
             Essential Digital Toolkit
           </h2>
           <p className="text-base sm:text-lg text-black max-w-2xl mx-auto font-secondary">
-            Fundamental tools I use to deliver quality support
+            Fundamental tools we use to deliver quality support
           </p>
         </motion.div>
 
