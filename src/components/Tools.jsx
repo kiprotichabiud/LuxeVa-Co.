@@ -1,10 +1,28 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  LayoutDashboard,
-  MessageSquare,
-  Image,
-} from "lucide-react";
+import { LayoutDashboard, MessageSquare, Image } from "lucide-react";
+
+// Animation variants
+export const fadeIn = {
+  hidden: { opacity: 0, y: 30 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const staggerContainer = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
 
 const Tools = () => {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -100,20 +118,30 @@ const Tools = () => {
     <section className="relative py-16 px-4 sm:px-6 md:px-8 lg:px-12 bg-pink-50">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={fadeIn}
+          className="text-center mb-12"
+        >
           <h2 className="text-3xl sm:text-4xl font-primary text-black mb-3">
             Essential Digital Toolkit
           </h2>
           <p className="text-base sm:text-lg text-black max-w-2xl mx-auto font-secondary">
             Fundamental tools I use to deliver quality support
           </p>
-        </div>
+        </motion.div>
 
         {/* Category Selector */}
-        <div className="flex justify-center mb-10">
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={staggerContainer}
+          className="flex justify-center mb-10"
+        >
           <div className="inline-flex flex-wrap justify-center gap-2 rounded-xl bg-pink-50 p-2 shadow-sm border border-pink-200">
             {toolCategories.map((category, index) => (
-              <button
+              <motion.button
                 key={index}
                 onClick={() => setActiveCategory(index)}
                 className={`flex items-center gap-2 px-4 py-2 text-sm font-secondary rounded-lg transition-all ${
@@ -121,13 +149,14 @@ const Tools = () => {
                     ? `text-black bg-gradient-to-r ${category.color} shadow-md`
                     : `text-black hover:bg-pink-100`
                 }`}
+                variants={fadeIn}
               >
                 {category.icon}
                 <span>{category.category}</span>
-              </button>
+              </motion.button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Tools Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -135,9 +164,10 @@ const Tools = () => {
             {toolCategories[activeCategory].tools.map((tool, index) => (
               <motion.div
                 key={`${activeCategory}-${index}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
+                variants={fadeIn}
+                initial="hidden"
+                animate="show"
+                exit="hidden"
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
                 className="bg-pink-100 rounded-xl shadow-md border border-pink-100 overflow-hidden transition-transform"
@@ -147,11 +177,15 @@ const Tools = () => {
                     <h3 className="text-xl sm:text-2xl font-secondary text-black mb-1">
                       {tool.name}
                     </h3>
-                    <p className="text-sm sm:text-base text-black font-quaternary">{tool.purpose}</p>
+                    <p className="text-sm sm:text-base text-black font-quaternary">
+                      {tool.purpose}
+                    </p>
                   </div>
 
                   <div className="mb-4 flex-grow">
-                    <p className="text-gray-700 text-sm sm:text-base font-quaternary">{tool.details}</p>
+                    <p className="text-gray-700 text-sm sm:text-base font-quaternary">
+                      {tool.details}
+                    </p>
                   </div>
 
                   <div>

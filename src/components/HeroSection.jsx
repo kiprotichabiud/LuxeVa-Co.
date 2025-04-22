@@ -7,7 +7,12 @@ const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className="relative px-4 sm:px-6 pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-16 lg:pb-20 bg-gradient-to-br from-pink-50 to-pink-100 overflow-hidden">
+    <motion.section
+      className="relative px-4 sm:px-6 pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-16 lg:pb-20 bg-gradient-to-br from-pink-50 to-pink-100 overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
         <div className="absolute top-20 -left-20 w-64 h-64 bg-[url('https://img.icons8.com/ios-filled/100/ff6b9a/flower.png')] bg-contain bg-no-repeat opacity-30"></div>
@@ -69,7 +74,7 @@ const HeroSection = () => {
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)}
       />
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,6 +1,10 @@
+'use client';
+
 import React, { useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { assets } from '../assets/assets';
+import { fadeIn, staggerContainer } from '../utils/motion';
 
 const services = [
   {
@@ -58,7 +62,6 @@ const Services = () => {
       if (scrollRef.current) {
         scrollRef.current.scrollBy({ left: 320, behavior: 'smooth' });
 
-        // If scrolled to end, scroll back to start
         if (
           scrollRef.current.scrollLeft + scrollRef.current.clientWidth >=
           scrollRef.current.scrollWidth
@@ -80,10 +83,20 @@ const Services = () => {
   };
 
   return (
-    <section className="bg-pink-50 py-16 px-6 lg:px-12"
-      id="services">
+    <motion.section
+      id="services"
+      className="bg-pink-50 py-16 px-6 lg:px-12"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
+        {/* Title + Description */}
+        <motion.div
+          className="text-center mb-12"
+          variants={fadeIn}
+        >
           <h2 className="text-5xl font-primary font-medium text-black leading-tight mb-4">
             Services we offer
           </h2>
@@ -91,17 +104,19 @@ const Services = () => {
             All of the resources you need to get your small business the help it needs.
             Spend less time working in your business and more time working on it.
           </p>
-        </div>
+        </motion.div>
 
         {/* Carousel */}
         <div className="relative">
-          <div
+          <motion.div
             ref={scrollRef}
             className="flex space-x-6 overflow-x-auto scroll-smooth scrollbar-hide snap-x snap-mandatory px-2 pb-4"
+            variants={fadeIn}
           >
             {services.map((service, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={fadeIn}
                 className="flex-shrink-0 snap-start bg-pink-100 shadow-xl rounded-2xl overflow-hidden w-full sm:w-[280px] md:w-[300px] lg:w-[320px] transition duration-300 hover:scale-105"
               >
                 <img
@@ -113,12 +128,15 @@ const Services = () => {
                   <h3 className="text-xl font-secondary text-black mb-2">{service.title}</h3>
                   <p className="text-sm text-gray-700 font-quaternary">{service.description}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          {/* Arrows Below */}
-          <div className="mt-8 flex justify-center gap-6">
+          {/* Arrows */}
+          <motion.div
+            className="mt-8 flex justify-center gap-6"
+            variants={fadeIn}
+          >
             <button
               onClick={scrollLeft}
               className="bg-white shadow-md p-3 rounded-full hover:bg-pink-200 transition"
@@ -131,10 +149,10 @@ const Services = () => {
             >
               <ChevronRight className="w-6 h-6 text-gray-700" />
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
