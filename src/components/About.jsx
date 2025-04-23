@@ -93,9 +93,9 @@ const About = () => {
           </motion.h2>
           
           <motion.p variants={fadeIn} className="max-w-3xl mx-auto text-lg text-gray-900 font-quaternary leading-relaxed">
-          "You’re the visionary. We're the get-it-done crew.
-For Executives, Entrepreneurs and Coaches building first and thinking bigger – we bring strategic, done-for-you support that keeps your business flowing, your systems humming, and your time protected. 
-Cut the noise. Keep the power. Scale with purpose. "
+            At LuxeVA&Co., we redefine virtual assistance by combining operational excellence with 
+            the personal touch of a luxury concierge. Our bespoke solutions empower visionary leaders 
+            to focus on what truly matters.
           </motion.p>
         </motion.div>
 

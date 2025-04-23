@@ -35,8 +35,8 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-base font-secondary font-normal sm:text-lg text-gray-900 mb-5 max-w-xl mx-auto lg:mx-0">
-              We help ambitious business entrepreneurs reclaim their time through personalized virtual support.
-              Let me handle the details while you focus on growing your empire.
+            "You’re the visionary. We're the get-it-done crew.
+            For Executives, Entrepreneurs and Coaches building first and thinking bigger – we bring strategic, done-for-you support that keeps your business flowing, your systems humming, and your time protected. 
             </p>
 
             <div className="flex justify-center lg:justify-start">
