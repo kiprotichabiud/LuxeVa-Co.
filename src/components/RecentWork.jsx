@@ -23,7 +23,7 @@ const RecentWork = () => {
 
   return (
     <motion.section
-      className="bg-pink-50 py-20 px-6 md:px-10"
+      className="bg-[#0d1b2a] py-20 px-6 md:px-10"
       id="work"
       variants={staggerContainer}
       initial="hidden"
@@ -32,7 +32,7 @@ const RecentWork = () => {
     >
       <div className="max-w-6xl mx-auto">
         <motion.h2
-          className="text-center text-4xl md:text-5xl font-primary text-gray-900 mb-16"
+          className="text-center text-4xl md:text-5xl font-primary text-[#d4af37] mb-16"
           variants={fadeIn}
         >
           Case Studies
@@ -42,13 +42,13 @@ const RecentWork = () => {
           {caseStudies.map((study, index) => (
             <motion.div
               key={index}
-              className="bg-pink-100 rounded-3xl p-6 md:p-8 text-gray-900"
+              className="bg-[#0d1b2a] border border-[#d4af37]/30 rounded-3xl p-6 md:p-8 text-white"
               variants={fadeIn}
             >
               <h3 className="text-lg md:text-xl font-secondary mb-4 leading-snug">
                 {study.title}
               </h3>
-              <p className="text-sm md:text-base mb-4 font-quaternary">
+              <p className="text-sm md:text-base mb-4 font-secondary">
                 {study.description}
               </p>
             </motion.div>

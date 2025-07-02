@@ -1,60 +1,146 @@
 import React from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+import { Mail, Phone, ChevronUp } from "lucide-react";
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  return (
-    <footer className="bg-pink-100 text-gray-700 pt-16 pb-8 px-6 border-t border-pink-100">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          {/* Branding and contact */}
-          <div className="text-center md:text-left">
-            <h3 className="text-2xl font-primary font-bold text-pink-700 mb-2">LuxeVA&Co.</h3>
-            <p className="text-sm mb-4">Your trusted virtual assistant partner</p>
-            
-            <div className="flex flex-col items-center md:items-start space-y-2">
-              <div className="flex items-center">
-                <Mail className="w-4 h-4 mr-2 text-pink-500" />
-                <a href="luxevaandco@gmail.com" className="hover:text-pink-600 transition-colors text-sm">
-                luxevaandco@gmail.com
-                </a>
-              </div>
-              <div className="flex items-center">
-                <Phone className="w-4 h-4 mr-2 text-pink-500" />
-                <a href="tel:+1234567890" className="hover:text-pink-600 transition-colors text-sm">
-                  +254758084900
-                </a>
-              </div>
-            </div>
-          </div>
+  const socialLinks = [
+    { icon: <FaFacebookF />, url: "https://facebook.com" },
+    { icon: <FaTwitter />, url: "https://twitter.com" },
+    { icon: <FaLinkedinIn />, url: "https://linkedin.com" },
+    { icon: <FaInstagram />, url: "https://instagram.com" }
+  ];
 
-          {/* Quick links */}
-          <div className="flex flex-col items-center md:items-end space-y-2">
-            <div className="flex space-x-6 mb-4">
-              <a href="#services" className="hover:text-pink-600 transition-colors font-medium">Services</a>
-              <a href="#work" className="hover:text-pink-600 transition-colors font-medium">Work</a>
-              <a href="#about" className="hover:text-pink-600 transition-colors font-medium">About</a>
-              <a href="#contact" className="hover:text-pink-600 transition-colors font-medium">Contact</a>
-            </div>
-            
-            <p className="text-xs font-primary text-gray-500">
-              &copy; {currentYear} LuxeVa&Co.. All rights reserved.
+  return (
+    <footer className="bg-[#0d1b2a] text-[#d4af37] pt-20 pb-12 px-6 border-t border-[#1b263b] relative overflow-hidden font-secondary">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-20 w-40 h-40 rounded-full bg-[#d4af37]/10 blur-xl"></div>
+        <div className="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-[#d4af37]/5 blur-xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+          {/* Brand Info */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <h3 className="text-3xl font-bold font-primary tracking-wider">LUXEVA&CO.</h3>
+            <p className="text-gray-300 leading-relaxed">
+              Elevating businesses through premium virtual assistance services tailored to your unique needs.
             </p>
-          </div>
+            
+            <div className="flex space-x-4">
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -3, scale: 1.1 }}
+                  className="w-10 h-10 rounded-full bg-[#1b263b] flex items-center justify-center text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0d1b2a] transition-all"
+                >
+                  {social.icon}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Quick Links */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center md:items-start"
+          >
+            <h4 className="text-xl font-semibold mb-6 tracking-wider border-b border-[#d4af37]/30 pb-2 w-full">Quick Links</h4>
+            <ul className="space-y-3 text-gray-300">
+              {['Services', 'Work', 'About', 'Testimonials', 'Contact'].map((item, index) => (
+                <motion.li 
+                  key={index}
+                  whileHover={{ x: 5 }}
+                >
+                  <a 
+                    href={`#${item.toLowerCase()}`} 
+                    className="hover:text-[#d4af37] transition-colors flex items-center"
+                  >
+                    <ChevronUp className="w-4 h-4 mr-2 rotate-90 text-[#d4af37]/70" />
+                    {item}
+                  </a>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Contact Info */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <h4 className="text-xl font-semibold mb-6 tracking-wider border-b border-[#d4af37]/30 pb-2">Contact Us</h4>
+            <div className="space-y-4 text-gray-300">
+              <div className="flex items-start">
+                <Mail className="w-5 h-5 mt-1 mr-4 text-[#d4af37]" />
+                <div>
+                  <p className="font-medium">Email</p>
+                  <a 
+                    href="mailto:luxevaandco@gmail.com" 
+                    className="hover:text-[#d4af37] transition-colors"
+                  >
+                    luxevaandco@gmail.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <Phone className="w-5 h-5 mt-1 mr-4 text-[#d4af37]" />
+                <div>
+                  <p className="font-medium">Phone</p>
+                  <a 
+                    href="tel:+254758084900" 
+                    className="hover:text-[#d4af37] transition-colors"
+                  >
+                    +254 758 084 900
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Back to top button - simplified */}
-        <a 
-          href="#" 
-          className="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-pink-600 hover:bg-pink-700 text-white flex items-center justify-center shadow-md transition-all"
-          aria-label="Back to top"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-            <path fillRule="evenodd" d="M11.47 2.47a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06l-6.22-6.22V21a.75.75 0 01-1.5 0V4.81l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5z" clipRule="evenodd" />
-          </svg>
-        </a>
+        <div className="border-t border-[#1b263b] pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-sm text-gray-400 mb-4 md:mb-0">
+            &copy; {currentYear} LuxeVA&Co. All rights reserved.
+          </p>
+          
+          <div className="flex space-x-6 text-sm">
+            <a href="#" className="hover:text-[#d4af37] transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-[#d4af37] transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-[#d4af37] transition-colors">Cookies</a>
+          </div>
+        </div>
       </div>
+
+      {/* Back to top button */}
+      <motion.a 
+        href="#"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        whileHover={{ y: -5, backgroundColor: "#d4af37", color: "#0d1b2a" }}
+        className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-[#1b263b] text-[#d4af37] flex items-center justify-center shadow-lg border border-[#d4af37]/30 z-50 transition-all"
+        aria-label="Back to top"
+      >
+        <ChevronUp className="w-5 h-5" />
+      </motion.a>
     </footer>
   );
 };

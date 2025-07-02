@@ -3,11 +3,12 @@
 
 @theme {
   --font-primary: "Elsie Swash Caps", cursive;
-  --font-secondary:  "Winky Sans", sans-serif;
+  --font-secondary: "Bricolage Grotesque", sans-serif;
+
   --font-tertiary:  "Montserrat", sans-serif;
   --font-quaternary:  "Gabriela", serif;
-  --font-quinary: 
- 
+  --font-quinary:  "Winky Sans", sans-serif;
+
 }
 @keyframes fade-in {
   from {
@@ -22,5 +23,10 @@
 
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
+}
+ body {
+  @apply bg-gray-900 text-white;
+
+
 }
 

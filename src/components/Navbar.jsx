@@ -49,7 +49,7 @@ const Navbar = () => {
     >
       <motion.nav
         className={`fixed w-full z-50 px-6 py-3 transition-all duration-300 ${
-          scrolled ? "bg-pink-50 shadow-md" : "bg-pink-50"
+          scrolled ? "bg-[#0d1b2a] shadow-lg" : "bg-[#0d1b2a]/90"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -63,16 +63,16 @@ const Navbar = () => {
                 width="32"
                 height="32"
                 viewBox="0 0 32 32"
-                className="text-pink-500"
+                className="text-[#d4af37]"
                 fill="currentColor"
               >
                 <path d="M16 0L20.94 12.42L32 16L20.94 19.58L16 32L11.06 19.58L0 16L11.06 12.42L16 0Z" />
               </svg>
               <div className="flex flex-col leading-tight">
-                <span className="font-primary text-2xl font-bold text-gray-900 tracking-tight">
-                  Luxe<span className="text-pink-500">VA</span>
+                <span className="font-primary text-2xl font-bold text-white tracking-tight">
+                  Luxe<span className="text-[#d4af37]">VA</span>
                 </span>
-                <span className="font-primary text-black font-bold">
+                <span className="font-primary text-[#d4af37] font-bold">
                   & CO.
                 </span>
               </div>
@@ -85,11 +85,11 @@ const Navbar = () => {
               <motion.a
                 key={item.name}
                 href={item.path}
-                className="relative font-semibold uppercase font-secondary tracking-wider group"
+                className="relative  uppercase font-secondary font-semibold  "
                 whileHover={{ scale: 1.05 }}
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-pink-600 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#d4af37] transition-all duration-300 group-hover:w-full"></span>
               </motion.a>
             ))}
           </div>
@@ -98,7 +98,7 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-4">
             <motion.a
               href="https://www.instagram.com/luxe_virtualassistance/"
-              className="p-2 rounded-full hover:bg-pink-50 text-gray-600 hover:text-pink-600 transition-colors"
+              className="p-2 rounded-full hover:bg-[#d4af37]/10 text-white hover:text-[#d4af37] transition-colors"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -106,7 +106,7 @@ const Navbar = () => {
             </motion.a>
             <motion.a
               href="https://www.facebook.com/herma.simei.2025"
-              className="p-2 rounded-full hover:bg-pink-50 text-gray-600 hover:text-pink-600 transition-colors"
+              className="p-2 rounded-full hover:bg-[#d4af37]/10 text-white hover:text-[#d4af37] transition-colors"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -114,7 +114,7 @@ const Navbar = () => {
             </motion.a>
             <motion.a
               href="https://www.linkedin.com/in/hermajepkoech/"
-              className="p-2 rounded-full hover:bg-pink-50 text-gray-600 hover:text-pink-600 transition-colors"
+              className="p-2 rounded-full hover:bg-[#d4af37]/10 text-white hover:text-[#d4af37] transition-colors"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -124,7 +124,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden p-2 rounded-full focus:outline-none text-gray-700"
+            className="md:hidden p-2 rounded-full focus:outline-none text-white hover:text-[#d4af37]"
             onClick={() => setMenuOpen(!menuOpen)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
@@ -137,7 +137,7 @@ const Navbar = () => {
         <AnimatePresence>
           {menuOpen && (
             <motion.div
-              className="md:hidden fixed inset-0 bg-white z-[999] pt-24 px-6"
+              className="md:hidden fixed inset-0 bg-[#0d1b2a] z-[999] pt-24 px-6"
               initial="hidden"
               animate="visible"
               exit="exit"
@@ -147,7 +147,7 @@ const Navbar = () => {
               <div className="absolute top-6 right-6 z-50">
                 <button
                   onClick={() => setMenuOpen(false)}
-                  className="text-gray-800 hover:text-pink-600 transition"
+                  className="text-white hover:text-[#d4af37] transition"
                 >
                   <Close className="w-6 h-6" />
                 </button>
@@ -168,10 +168,10 @@ const Navbar = () => {
                     <motion.a
                       key={item.name}
                       href={item.path}
-                      className="text-xl font-secondary font-semibold text-gray-800 py-3 border-b border-gray-100"
+                      className="text-xl font-secondary font-semibold text-white py-3 border-b border-[#d4af37]/20"
                       variants={itemVariants}
                       onClick={() => setMenuOpen(false)}
-                      whileHover={{ x: 10 }}
+                      whileHover={{ x: 10, color: "#d4af37" }}
                     >
                       {item.name}
                     </motion.a>
@@ -185,7 +185,7 @@ const Navbar = () => {
                 >
                   <motion.a
                     href="https://www.instagram.com/luxe_virtualassistance/"
-                    className="p-3 rounded-full bg-pink-50 text-pink-600"
+                    className="p-3 rounded-full bg-[#d4af37]/10 text-[#d4af37]"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -193,7 +193,7 @@ const Navbar = () => {
                   </motion.a>
                   <motion.a
                     href="https://www.facebook.com/herma.simei.2025"
-                    className="p-3 rounded-full bg-pink-50 text-pink-600"
+                    className="p-3 rounded-full bg-[#d4af37]/10 text-[#d4af37]"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -201,7 +201,7 @@ const Navbar = () => {
                   </motion.a>
                   <motion.a
                     href="https://www.linkedin.com/in/hermajepkoech/"
-                    className="p-3 rounded-full bg-pink-50 text-pink-600"
+                    className="p-3 rounded-full bg-[#d4af37]/10 text-[#d4af37]"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >

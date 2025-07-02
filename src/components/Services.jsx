@@ -1,8 +1,6 @@
 'use client';
-
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { assets } from '../assets/assets';
 import { fadeIn, staggerContainer } from '../utils/motion';
 
@@ -55,102 +53,63 @@ const services = [
 ];
 
 const Services = () => {
-  const scrollRef = useRef(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (scrollRef.current) {
-        scrollRef.current.scrollBy({ left: 320, behavior: 'smooth' });
-
-        if (
-          scrollRef.current.scrollLeft + scrollRef.current.clientWidth >=
-          scrollRef.current.scrollWidth
-        ) {
-          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-        }
-      }
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const scrollLeft = () => {
-    scrollRef.current.scrollBy({ left: -320, behavior: 'smooth' });
-  };
-
-  const scrollRight = () => {
-    scrollRef.current.scrollBy({ left: 320, behavior: 'smooth' });
-  };
-
   return (
     <motion.section
       id="services"
-      className="bg-pink-50 py-16 px-6 lg:px-12"
+      className="bg-[#0d1b2a] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12"
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       <div className="max-w-7xl mx-auto">
         {/* Title + Description */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-10 sm:mb-16"
           variants={fadeIn}
         >
-          <h2 className="text-5xl font-primary font-medium text-black leading-tight mb-4">
-            Services we offer
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-primary font-bold text-white leading-tight mb-3 sm:mb-4">
+            Our Premium Services
           </h2>
-          <p className="text-gray-900 font-secondary text-lg max-w-2xl mx-auto">
-            All of the resources you need to get your small business the help it needs.
-            Spend less time working in your business and more time working on it.
+          <p className="text-[#d4af37] font-secondary text-base sm:text-lg max-w-2xl mx-auto px-2 sm:px-0">
+            Strategic solutions designed to elevate your business operations and maximize efficiency
           </p>
         </motion.div>
 
-        {/* Carousel */}
-        <div className="relative">
-          <motion.div
-            ref={scrollRef}
-            className="flex space-x-6 overflow-x-auto scroll-smooth scrollbar-hide snap-x snap-mandatory px-2 pb-4"
-            variants={fadeIn}
-          >
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                variants={fadeIn}
-                className="flex-shrink-0 snap-start bg-pink-100 shadow-xl rounded-2xl overflow-hidden w-full sm:w-[280px] md:w-[300px] lg:w-[320px] transition duration-300 hover:scale-105"
-              >
+        {/* Services Grid - Responsive columns */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          variants={staggerContainer}
+        >
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              variants={fadeIn}
+              className="bg-[#1b263b] rounded-xl overflow-hidden transition-all duration-300 group hover:shadow-lg hover:shadow-[#d4af37]/10"
+              whileHover={{ y: -5 }}
+              whileTap={{ scale: 0.98 }} // Added tap feedback for mobile
+            >
+              <div className="relative h-64 sm:h-72 overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
                 />
-                <div className="p-5">
-                  <h3 className="text-xl font-secondary text-black mb-2">{service.title}</h3>
-                  <p className="text-sm text-gray-700 font-quaternary">{service.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Arrows */}
-          <motion.div
-            className="mt-8 flex justify-center gap-6"
-            variants={fadeIn}
-          >
-            <button
-              onClick={scrollLeft}
-              className="bg-white shadow-md p-3 rounded-full hover:bg-pink-200 transition"
-            >
-              <ChevronLeft className="w-6 h-6 text-gray-700" />
-            </button>
-            <button
-              onClick={scrollRight}
-              className="bg-white shadow-md p-3 rounded-full hover:bg-pink-200 transition"
-            >
-              <ChevronRight className="w-6 h-6 text-gray-700" />
-            </button>
-          </motion.div>
-        </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b2a]/90 via-[#0d1b2a]/30 to-transparent" />
+              </div>
+              <div className="p-5 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold font-secondary text-white mb-2 sm:mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-sm sm:text-base text-gray-300 font-quaternary leading-relaxed">
+                  {service.description}
+                </p>
+                <div className="mt-3 sm:mt-4 h-0.5 w-16 bg-[#d4af37] transition-all duration-300 group-hover:w-24" />
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </motion.section>
   );

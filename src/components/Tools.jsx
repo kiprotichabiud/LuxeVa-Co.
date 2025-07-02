@@ -31,9 +31,9 @@ const Tools = () => {
     {
       category: "Productivity",
       icon: <LayoutDashboard className="w-5 h-5" />,
-      color: "from-pink-100 to-pink-300",
-      textColor: "text-black",
-      bgColor: "bg-pink-50",
+      color: "from-[#d4af37] to-[#d4af37]/80",
+      textColor: "text-[#0d1b2a]",
+      bgColor: "bg-[#d4af37]/10",
       description: "Essential tools to streamline your workflow",
       tools: [
         {
@@ -59,9 +59,9 @@ const Tools = () => {
     {
       category: "Communication",
       icon: <MessageSquare className="w-5 h-5" />,
-      color: "from-pink-100 to-pink-300",
-      textColor: "text-black",
-      bgColor: "bg-pink-50",
+      color: "from-[#d4af37] to-[#d4af37]/80",
+      textColor: "text-[#0d1b2a]",
+      bgColor: "bg-[#d4af37]/10",
       description: "Core tools for team collaboration",
       tools: [
         {
@@ -87,9 +87,9 @@ const Tools = () => {
     {
       category: "Design",
       icon: <Image className="w-5 h-5" />,
-      color: "from-pink-100 to-pink-300",
-      textColor: "text-pink-600",
-      bgColor: "bg-pink-50",
+      color: "from-[#d4af37] to-[#d4af37]/80",
+      textColor: "text-[#0d1b2a]",
+      bgColor: "bg-[#d4af37]/10",
       description: "Basic tools for visual content",
       tools: [
         {
@@ -115,7 +115,7 @@ const Tools = () => {
   ];
 
   return (
-    <section className="relative py-16 px-4 sm:px-6 md:px-8 lg:px-12 bg-pink-50">
+    <section className="relative py-16 px-4 sm:px-6 md:px-8 lg:px-12 bg-[#0d1b2a]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -124,10 +124,10 @@ const Tools = () => {
           variants={fadeIn}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-primary text-black mb-3">
+          <h2 className="text-3xl sm:text-4xl font-primary text-[#d4af37] mb-3">
             Essential Digital Toolkit
           </h2>
-          <p className="text-base sm:text-lg text-black max-w-2xl mx-auto font-secondary">
+          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto font-secondary">
             Fundamental tools we use to deliver quality support
           </p>
         </motion.div>
@@ -139,15 +139,15 @@ const Tools = () => {
           variants={staggerContainer}
           className="flex justify-center mb-10"
         >
-          <div className="inline-flex flex-wrap justify-center gap-2 rounded-xl bg-pink-50 p-2 shadow-sm border border-pink-200">
+          <div className="inline-flex flex-wrap justify-center gap-2 rounded-xl bg-[#0d1b2a] p-2 shadow-sm border border-[#d4af37]/30">
             {toolCategories.map((category, index) => (
               <motion.button
                 key={index}
                 onClick={() => setActiveCategory(index)}
                 className={`flex items-center gap-2 px-4 py-2 text-sm font-secondary rounded-lg transition-all ${
                   activeCategory === index
-                    ? `text-black bg-gradient-to-r ${category.color} shadow-md`
-                    : `text-black hover:bg-pink-100`
+                    ? `text-[#0d1b2a] bg-gradient-to-r ${category.color} shadow-md`
+                    : `text-gray-300 hover:bg-[#d4af37]/20`
                 }`}
                 variants={fadeIn}
               >
@@ -170,30 +170,30 @@ const Tools = () => {
                 exit="hidden"
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="bg-pink-100 rounded-xl shadow-md border border-pink-100 overflow-hidden transition-transform"
+                className="bg-[#0d1b2a] rounded-xl shadow-md border border-[#d4af37]/20 overflow-hidden transition-transform"
               >
                 <div className="p-6 sm:p-8 flex flex-col h-full">
                   <div className="mb-4">
-                    <h3 className="text-xl sm:text-2xl font-secondary text-black mb-1">
+                    <h3 className="text-xl sm:text-2xl font-secondary text-[#d4af37] mb-1">
                       {tool.name}
                     </h3>
-                    <p className="text-sm sm:text-base text-black font-quaternary">
+                    <p className="text-sm sm:text-base text-white font-secondary">
                       {tool.purpose}
                     </p>
                   </div>
 
                   <div className="mb-4 flex-grow">
-                    <p className="text-gray-700 text-sm sm:text-base font-quaternary">
+                    <p className="text-gray-100 text-sm sm:text-base font-secondary">
                       {tool.details}
                     </p>
                   </div>
 
                   <div>
-                    <div className="flex justify-between text-xs sm:text-sm text-pink-600 mb-1">
+                    <div className="flex justify-between text-xs sm:text-sm text-[#d4af37] mb-1 font-secondary">
                       <span>Proficiency</span>
                       <span>{tool.mastery}%</span>
                     </div>
-                    <div className="w-full h-2 sm:h-3 bg-pink-100 rounded-full overflow-hidden">
+                    <div className="w-full h-2 sm:h-3 bg-[#0d1b2a] rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: `${tool.mastery}%` }}
