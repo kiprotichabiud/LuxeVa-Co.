@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Instagram, Facebook, Linkedin, Menu, X as Close } from "lucide-react";
+import { assets } from "../assets/assets";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -57,27 +58,9 @@ const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo */}
-          <motion.div whileHover={{ scale: 1.03 }} className="flex items-center">
-            <a href="#" className="flex items-center gap-2">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                className="text-[#d4af37]"
-                fill="currentColor"
-              >
-                <path d="M16 0L20.94 12.42L32 16L20.94 19.58L16 32L11.06 19.58L0 16L11.06 12.42L16 0Z" />
-              </svg>
-              <div className="flex flex-col leading-tight">
-                <span className="font-primary text-2xl font-bold text-white tracking-tight">
-                  Luxe<span className="text-[#d4af37]">VA</span>
-                </span>
-                <span className="font-primary text-[#d4af37] font-bold">
-                  & CO.
-                </span>
-              </div>
-            </a>
-          </motion.div>
+        <div>
+          <img src={assets.logo} alt="LuxeVA&Co. Logo" className="w-20 h-16" />
+        </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
