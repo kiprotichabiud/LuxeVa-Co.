@@ -23,8 +23,8 @@ const Contact = () => {
       
       <div className="text-center px-6 z-10">
 
-        <h2 className="text-[#d4af37] text-2xl md:text-4xl lg:text-5xl font-primary tracking-wide mb-6">
-          LET'S CREATE SPACE TO BREATHE TOGETHER
+        <h2 className="text-[#d4af37] text-2xl md:text-4xl lg:text-5xl font-primary p-12 tracking-wide mb-6">
+          Together, we'll turn your full potential into your every day reality
         </h2>
         <div className="flex justify-center">
           <motion.button
