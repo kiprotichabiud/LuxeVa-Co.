@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Instagram, Facebook, Linkedin, Menu, X as Close } from "lucide-react";
+import {  Facebook, Linkedin, Menu, X as Close } from "lucide-react";
 import { assets } from "../assets/assets";
 
 const Navbar = () => {
@@ -68,7 +68,7 @@ const Navbar = () => {
               <motion.a
                 key={item.name}
                 href={item.path}
-                className="relative  uppercase font-secondary font-semibold  "
+                className="relative  uppercase font-tertiary font-semibold  "
                 whileHover={{ scale: 1.05 }}
               >
                 {item.name}
@@ -79,14 +79,7 @@ const Navbar = () => {
 
           {/* Desktop Social Icons */}
           <div className="hidden md:flex space-x-4">
-            <motion.a
-              href="https://www.instagram.com/luxe_virtualassistance/"
-              className="p-2 rounded-full hover:bg-[#d4af37]/10 text-white hover:text-[#d4af37] transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Instagram className="w-5 h-5" />
-            </motion.a>
+            
             <motion.a
               href="https://www.facebook.com/herma.simei.2025"
               className="p-2 rounded-full hover:bg-[#d4af37]/10 text-white hover:text-[#d4af37] transition-colors"
@@ -166,14 +159,7 @@ const Navbar = () => {
                   className="flex space-x-6 justify-center pt-12"
                   variants={itemVariants}
                 >
-                  <motion.a
-                    href="https://www.instagram.com/luxe_virtualassistance/"
-                    className="p-3 rounded-full bg-[#d4af37]/10 text-[#d4af37]"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Instagram className="w-6 h-6" />
-                  </motion.a>
+                  
                   <motion.a
                     href="https://www.facebook.com/herma.simei.2025"
                     className="p-3 rounded-full bg-[#d4af37]/10 text-[#d4af37]"
