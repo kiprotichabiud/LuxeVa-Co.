@@ -46,8 +46,8 @@ const services = [
     image: assets.image11
   },
   {
-    title: "Digital Marketing",
-    description: "Drive awareness and sales through effective digital strategies.",
+    title: "Bookkeeping",
+    description: "Accurate financial record-keeping for your business.",
     image: assets.image12
   }
 ];
