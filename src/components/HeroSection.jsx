@@ -43,7 +43,9 @@ const HeroSection = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              For visionary executives and entrepreneurs, we provide strategic support that keeps your business flowing, your systems optimized, and your time protected.
+          You’re the visionary. We’re the get-it-done crew.
+For Executives, Founders and Entrepreneurs building fast and thinking bigger—we bring strategic, done-for-you support that keeps your business flowing, your systems humming, and your time protected.
+Because building your legacy shouldn’t mean burning out.
             </motion.p>
 
             <div className="flex justify-center lg:justify-between ">
