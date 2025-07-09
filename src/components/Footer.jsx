@@ -7,22 +7,14 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: <FaFacebookF />, url: "https://facebook.com" },
-    { icon: <FaTwitter />, url: "https://twitter.com" },
-    { icon: <FaLinkedinIn />, url: "https://linkedin.com" },
-    { icon: <FaInstagram />, url: "https://instagram.com" }
+    { icon: <FaFacebookF />, url: "https://www.facebook.com/herma.simei.2025" },
+    { icon: <FaLinkedinIn />, url: "https://www.linkedin.com/in/hermajepkoech/" },
   ];
 
   return (
     <footer className="bg-[#0d1b2a] text-[#d4af37] pt-20 pb-12 px-6 border-t border-[#1b263b] relative overflow-hidden font-secondary">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-40 h-40 rounded-full bg-[#d4af37]/10 blur-xl"></div>
-        <div className="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-[#d4af37]/5 blur-xl"></div>
-      </div>
-
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
           {/* Brand Info */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -32,7 +24,7 @@ const Footer = () => {
             className="space-y-6"
           >
             <h3 className="text-3xl font-bold font-primary tracking-wider">LUXEVA&CO.</h3>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed text-lg">
               Elevating businesses through premium virtual assistance services tailored to your unique needs.
             </p>
             
@@ -44,7 +36,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ y: -3, scale: 1.1 }}
-                  className="w-10 h-10 rounded-full bg-[#1b263b] flex items-center justify-center text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0d1b2a] transition-all"
+                  className="w-12 h-12 rounded-full bg-[#1b263b] flex items-center justify-center text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0d1b2a] transition-all"
                 >
                   {social.icon}
                 </motion.a>
@@ -52,62 +44,35 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
+          {/* Contact Info */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center md:items-start"
-          >
-            <h4 className="text-xl font-semibold mb-6 tracking-wider border-b border-[#d4af37]/30 pb-2 w-full">Quick Links</h4>
-            <ul className="space-y-3 text-gray-300">
-              {['Services', 'Work', 'About', 'Testimonials', 'Contact'].map((item, index) => (
-                <motion.li 
-                  key={index}
-                  whileHover={{ x: 5 }}
-                >
-                  <a 
-                    href={`#${item.toLowerCase()}`} 
-                    className="hover:text-[#d4af37] transition-colors flex items-center"
-                  >
-                    <ChevronUp className="w-4 h-4 mr-2 rotate-90 text-[#d4af37]/70" />
-                    {item}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
             className="space-y-6"
           >
-            <h4 className="text-xl font-semibold mb-6 tracking-wider border-b border-[#d4af37]/30 pb-2">Contact Us</h4>
-            <div className="space-y-4 text-gray-300">
+            <h4 className="text-2xl font-semibold mb-8 tracking-wider border-b border-[#d4af37]/30 pb-3">Contact Us</h4>
+            <div className="space-y-6 text-gray-300">
               <div className="flex items-start">
-                <Mail className="w-5 h-5 mt-1 mr-4 text-[#d4af37]" />
+                <Mail className="w-6 h-6 mt-1 mr-4 text-[#d4af37]" />
                 <div>
-                  <p className="font-medium">Email</p>
+                  <p className="font-medium text-lg mb-1">Email</p>
                   <a 
                     href="mailto:luxevaandco@gmail.com" 
-                    className="hover:text-[#d4af37] transition-colors"
+                    className="hover:text-[#d4af37] transition-colors text-base"
                   >
                     luxevaandco@gmail.com
                   </a>
                 </div>
               </div>
               <div className="flex items-start">
-                <Phone className="w-5 h-5 mt-1 mr-4 text-[#d4af37]" />
+                <Phone className="w-6 h-6 mt-1 mr-4 text-[#d4af37]" />
                 <div>
-                  <p className="font-medium">Phone</p>
+                  <p className="font-medium text-lg mb-1">Phone</p>
                   <a 
                     href="tel:+254758084900" 
-                    className="hover:text-[#d4af37] transition-colors"
+                    className="hover:text-[#d4af37] transition-colors text-base"
                   >
                     +254 758 084 900
                   </a>
